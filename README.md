@@ -10,6 +10,10 @@ _Shameless Plug_
 
 > `Sandeep-Jangity-Resume.pdf`
 
+> `https://www.linkedin.com/in/sjangity/`
+
+> `https://twitter.com/sjangity`
+
 ### Sketch File
 
 > `/design/dropbox-sandeepjangity.co.0.0.1.sketch`
