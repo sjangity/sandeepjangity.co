@@ -8,11 +8,11 @@ A standard master-detail interface fairly conventional in the native mobile worl
 
 _Shameless Plug_
 
-> `Sandeep-Jangity-Resume.pdf`
+> [Resume](https://www.dropbox.com/s/vveohisfofnjuca/Sandeep-Jangity-Resume.pdf?dl=0)
 
-> `https://www.linkedin.com/in/sjangity/`
+> [LinkedIn](https://www.linkedin.com/in/sjangity/)
 
-> `https://twitter.com/sjangity`
+> [@sjangity](https://twitter.com/sjangity)
 
 ### Sketch File
 
