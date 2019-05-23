@@ -4,7 +4,11 @@ Welcome to my personal portfolio - a React SPA implementation.
 
 ### The Objective
 
-A standard master-detail interface fairly conventional in the native mobile world.
+A standard master-detail interface fairly conventional in the native mobile world to highlight my experience as a Full-Stack Web and Mobile developer over the last 12-years.
+
+_Shameless Plug_
+
+> `Sandeep-Jangity-Resume.pdf`
 
 ### Sketch File
 
