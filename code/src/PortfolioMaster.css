@@ -21,9 +21,9 @@ body {
   position: relative;
 }
 
+/*
 .PanelHero:before {
   content: '';
-  /* background: rgba(0, 0, 0, 0.31); */
   position: absolute;
   width: 100%;
   height: 100%;
@@ -31,6 +31,7 @@ body {
   left: 0;
   right: 0;
 }
+*/
 
 .PanelHero h1 {
   font-size: 36px;

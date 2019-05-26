@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { Header, Footer } from "./components/partials";
+import { Link } from "../router";
 
-import "./App.css";
-
-class App extends Component {
+export class MasterContent extends Component {
   render() {
     return (
-      <div className="App">
-        <section className="Centered">
-          <h3>8 years as a web, mobile engineer at startups. Hire me.</h3>
-        </section>
-
+      <div>
         <section className="PanelHero Centered" id="hero">
           <h1>
             <span>Building products people want is hard, really hard.</span>
@@ -24,35 +18,29 @@ class App extends Component {
           </span>
           <h3>
             My mission is to master the{" "}
-            <a href="/">Zen of Product Development</a>
+            <Link to="/detail">Zen of Product Development</Link>
           </h3>
         </section>
 
-        <section className="Centered">
+        <section className="PanelHero Centered">
           <h2>
             0 marketing, 2-month launch cycles, 50K registered conversions on
             products I’ve conceived is a noteable accomplishment; however....
           </h2>
         </section>
 
-        <section className="Centered">
+        <section className="PanelHero Centered">
           <h2>I BLOG</h2>
         </section>
 
-        <section className="Centered">
+        <section className="PanelHero Centered">
           <h2>I SHARE</h2>
         </section>
 
-        <section className="Centered">
+        <section className="PanelHero Centered">
           <h2>I continue to build learn & Innovate</h2>
-        </section>
-
-        <section className="Centered" id="footer">
-          <Footer />
         </section>
       </div>
     );
   }
 }
-
-export default App;

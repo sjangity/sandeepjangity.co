@@ -10,6 +10,7 @@ export class Link extends Component {
   };
 
   handleClick = e => {
+    console.log("click detected");
     e.preventDefault();
 
     // pushState is already handled by link handler in Router component, so remove logic here to decouple components
@@ -20,7 +21,6 @@ export class Link extends Component {
   };
   render() {
     const activeClass = this.context.route === this.props.to ? "active" : "";
-    // return <a href={this.props.to}>{this.props.children}</a>
     return (
       <a href="#" className={activeClass} onClick={this.handleClick}>
         {this.props.children}
