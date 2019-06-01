@@ -8,9 +8,14 @@ export class DetailContent extends Component {
     return (
       <div>
         <section className="PanelHero Centered" id="hero">
-          <h1>
-            <span>HIRE ME AND LET’S ZEN TOGETHER. I AM OPEN AN AVAILABLE.</span>
-          </h1>
+          <div className="HeroProfile" />
+          <div>
+            <h1>
+              <span>
+                HIRE ME AND LET’S ZEN TOGETHER. I AM OPEN AN AVAILABLE.
+              </span>
+            </h1>
+          </div>
 
           <h3>
             <Link to="/">See what I have done</Link>

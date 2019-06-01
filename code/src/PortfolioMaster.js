@@ -12,17 +12,17 @@ class PortfolioMaster extends Component {
   render() {
     return (
       <div className="App">
-        <section className="Centered">
+        <header className="Header Centered">
           <h3>8 years as a web, mobile engineer at startups. Hire me.</h3>
-        </section>
+        </header>
 
         {/* let's specify some dyanmic routes */}
         <RouteRenderer path="/" component={MasterContent} />
         <RouteRenderer path="/detail" component={DetailContent} />
 
-        <section className="Centered" id="footer">
+        <footer className="Centered" id="footer">
           <Footer />
-        </section>
+        </footer>
       </div>
     );
   }

@@ -9,6 +9,9 @@ export class MasterContent extends Component {
       <div>
         <section className="PanelHero Centered" id="hero">
           <h1>
+            <span className="HeroPic">
+              <img src="{profilepic}" />
+            </span>
             <span>Building products people want is hard, really hard.</span>
           </h1>
           <span>

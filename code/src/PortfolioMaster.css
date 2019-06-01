@@ -7,10 +7,24 @@ body {
   font-size: 16px;
 }
 
+section {
+  border: 1px solid black;
+}
+
 /* utils */
 
 .Centered {
   text-align: center;
+}
+
+.App {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.App section:nth-child(even) {
+  background: grey
 }
 
 /* section */
@@ -33,7 +47,7 @@ body {
 }
 */
 
-.PanelHero h1 {
+/* .PanelHero h1 {
   font-size: 36px;
   text-transform: uppercase;
 }
@@ -45,4 +59,8 @@ body {
 
 .PanelHero h1 span {
   font-weight: 800;
+} */
+
+.PanelHero h3 {
+  background: #50E3C2;
 }
