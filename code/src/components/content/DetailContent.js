@@ -1,9 +1,12 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+// import PropTypes from "prop-types";
 
-import { Link } from "../router";
+import Link from '../router/Link';
 
-export class DetailContent extends Component {
+class DetailContent extends Component {
+  debugger;
+
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
       <div>
@@ -33,3 +36,5 @@ export class DetailContent extends Component {
     );
   }
 }
+
+export default DetailContent;

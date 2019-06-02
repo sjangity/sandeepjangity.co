@@ -1,14 +1,18 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+// import PropTypes from "prop-types";
+import { hot } from 'react-hot-loader';
 
-import { Header, Footer } from "./components/partials";
-import { Link, RouteRenderer } from "./components/router";
+import Footer from './components/partials/Footer';
+import RouteRenderer from './components/router/RouteRenderer';
 
-import { MasterContent, DetailContent } from "./components/content";
+// import { MasterContent, DetailContent } from './components/content';
+import MasterContent from './components/content/MasterContent';
+import DetailContent from './components/content/DetailContent';
 
-import "./PortfolioMaster.css";
+// import './PortfolioMaster.css';
 
 class PortfolioMaster extends Component {
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
       <div className="App">
@@ -28,4 +32,7 @@ class PortfolioMaster extends Component {
   }
 }
 
-export default PortfolioMaster;
+// export default PortfolioMaster;
+
+const hotFunction = hot(module); // returns a function
+export default hotFunction(PortfolioMaster);

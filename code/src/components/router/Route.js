@@ -1,5 +1,5 @@
-import React, { Component } from "react";
+import { Component } from 'react';
 
-export class Route extends Component {
+export default class Route extends Component {
   return;
 }

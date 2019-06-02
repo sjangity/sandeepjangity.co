@@ -1,18 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import * as serviceWorker from "./serviceWorker";
+import * as serviceWorker from './serviceWorker';
 
-import PortfolioMaster from "./PortfolioMaster";
+import PortfolioMaster from './PortfolioMaster';
+import DefaultErrorBoundary from './DefaultErrorBoundary';
+import Router from './components/router/Router';
 
-import { Router } from "./components/router";
+import './PortfolioMaster.css';
+
+// NODE_ENV is available through webpack build process and which mode is set
+// Look for accessibility violations in rendered DOM
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
+  const axe = require('react-axe');
+  axe(React, ReactDOM, 1000);
+}
 
 ReactDOM.render(
   // <App is now the child of the <Router component
-  <Router>
-    <PortfolioMaster />
-  </Router>,
-  document.getElementById("root")
+  // <React.StrictMode>
+  <DefaultErrorBoundary>
+    <Router>
+      <PortfolioMaster />
+    </Router>
+  </DefaultErrorBoundary>,
+  // </React.StrictMode>,
+  document.getElementById('app'),
 );
 
 // If you want your app to work offline and load faster, you can change

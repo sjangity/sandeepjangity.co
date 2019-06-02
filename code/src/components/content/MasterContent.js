@@ -1,17 +1,16 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+// import PropTypes from "prop-types";
 
-import { Link } from "../router";
+import Link from '../router/Link';
 
-export class MasterContent extends Component {
+class MasterContent extends React.Component {
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
       <div>
         <section className="PanelHero Centered" id="hero">
           <h1>
-            <span className="HeroPic">
-              <img src="{profilepic}" />
-            </span>
+            <span className="HeroPic">profile pic</span>
             <span>Building products people want is hard, really hard.</span>
           </h1>
           <span>
@@ -20,7 +19,7 @@ export class MasterContent extends Component {
             </h2>
           </span>
           <h3>
-            My mission is to master the{" "}
+            My mission is to master the{' '}
             <Link to="/detail">Zen of Product Development</Link>
           </h3>
         </section>
@@ -47,3 +46,5 @@ export class MasterContent extends Component {
     );
   }
 }
+
+export default MasterContent;
