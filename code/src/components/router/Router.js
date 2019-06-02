@@ -8,6 +8,7 @@ const getCurrentPath = () => {
   return path.substring(path.lastIndexOf('/'));
 };
 
+// new context api
 export const RouteContext = React.createContext({
   route: false,
   linkHandler: () => {},

@@ -5,11 +5,7 @@ import { hot } from 'react-hot-loader';
 import Footer from './components/partials/Footer';
 import RouteRenderer from './components/router/RouteRenderer';
 
-// import { MasterContent, DetailContent } from './components/content';
-import MasterContent from './components/content/MasterContent';
-import DetailContent from './components/content/DetailContent';
-
-// import './PortfolioMaster.css';
+import { MasterContent, DetailContent } from './components/content';
 
 class PortfolioMaster extends Component {
   // eslint-disable-next-line class-methods-use-this

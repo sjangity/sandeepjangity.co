@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from "prop-types";
 
-import Link from '../router/Link';
+import { Link } from '../router';
 
 class DetailContent extends Component {
   debugger;

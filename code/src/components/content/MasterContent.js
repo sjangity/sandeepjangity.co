@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from "prop-types";
 
-import Link from '../router/Link';
+import { Link } from '../router';
 
 class MasterContent extends React.Component {
   // eslint-disable-next-line class-methods-use-this
@@ -10,7 +10,10 @@ class MasterContent extends React.Component {
       <div>
         <section className="PanelHero Centered" id="hero">
           <h1>
-            <span className="HeroPic">profile pic</span>
+            <span className="HeroPic">
+              <img alt="head shot" src="./profile.jpeg" />
+              profile pic
+            </span>
             <span>Building products people want is hard, really hard.</span>
           </h1>
           <span>
