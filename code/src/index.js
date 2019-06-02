@@ -19,13 +19,13 @@ if (process.env.NODE_ENV === 'development') {
 
 ReactDOM.render(
   // <App is now the child of the <Router component
-  // <React.StrictMode>
-  <DefaultErrorBoundary>
-    <Router>
-      <PortfolioMaster />
-    </Router>
-  </DefaultErrorBoundary>,
-  // </React.StrictMode>,
+  <React.StrictMode>
+    <DefaultErrorBoundary>
+      <Router>
+        <PortfolioMaster />
+      </Router>
+    </DefaultErrorBoundary>
+  </React.StrictMode>,
   document.getElementById('app'),
 );
 
