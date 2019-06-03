@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   // relative path to source file
@@ -37,5 +38,11 @@ module.exports = {
       // provide a template that will be used to create the public/index.html file
       template: './src/index.html',
     }),
+    new CopyPlugin([
+      {
+        from: './public/images',
+        to: 'images',
+      },
+    ]),
   ],
 };

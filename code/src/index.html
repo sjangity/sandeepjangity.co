@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate</title>
-  </head>
 
-  <body>
-    <div id="app"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boilerplate</title>
+</head>
 
-    <!-- we told webpack that we want react and react-dom served over CDN only for production builds -->
-    <!-- we use an EJS style -->
-    <% if(process.env.NODE_ENV === 'production') { %>
-    <script
-      crossorigin
-      src="https://unpkg.com/react@16/umd/react.production.min.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
-    ></script>
-    <% } %>
-  </body>
+<body>
+  <div id="app"></div>
+
+  <!-- we told webpack that we want react and react-dom served over CDN only for production builds -->
+  <!-- we use an EJS style -->
+  <% if(process.env.NODE_ENV === 'production') { %>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <% } %>
+</body>
+
 </html>

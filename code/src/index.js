@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Materia-UI / styled-components
+// import { ThemeProvider } from 'styled-components';
+// import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import NoSsr from '@material-ui/core/NoSsr';
+import { ThemeProvider } from '@material-ui/styles';
 import * as serviceWorker from './serviceWorker';
+
+import theme from './components/theme';
 
 import PortfolioMaster from './PortfolioMaster';
 import DefaultErrorBoundary from './DefaultErrorBoundary';
 import Router from './components/router/Router';
-
-import './PortfolioMaster.css';
 
 // NODE_ENV is available through webpack build process and which mode is set
 // Look for accessibility violations in rendered DOM
@@ -22,7 +27,11 @@ ReactDOM.render(
   <React.StrictMode>
     <DefaultErrorBoundary>
       <Router>
-        <PortfolioMaster />
+        <NoSsr>
+          <ThemeProvider theme={theme}>
+            <PortfolioMaster />
+          </ThemeProvider>
+        </NoSsr>
       </Router>
     </DefaultErrorBoundary>
   </React.StrictMode>,

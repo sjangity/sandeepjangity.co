@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-// import PropTypes from "prop-types";
 import { hot } from 'react-hot-loader';
 
 import Footer from './components/partials/Footer';
 import RouteRenderer from './components/router/RouteRenderer';
-
 import { MasterContent, DetailContent } from './components/content';
+
+// import './PortfolioMaster.css';
 
 class PortfolioMaster extends Component {
   // eslint-disable-next-line class-methods-use-this
@@ -27,8 +27,6 @@ class PortfolioMaster extends Component {
     );
   }
 }
-
-// export default PortfolioMaster;
 
 const hotFunction = hot(module); // returns a function
 export default hotFunction(PortfolioMaster);
