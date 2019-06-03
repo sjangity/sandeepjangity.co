@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/styles';
+import {
+  makeStyles,
+  // styled
+} from '@material-ui/styles';
+// import styled from 'styled-components';
 import {
   Container,
   Card,
@@ -14,6 +18,7 @@ import {
   Button,
   ButtonBase,
 } from '@material-ui/core';
+
 import Build from '@material-ui/icons/Build';
 import { withStyles } from '@material-ui/core/styles';
 // import { Link } from '../router';
@@ -24,9 +29,47 @@ const ossProjects = [
   {
     title: 'sandeepjangity.co',
     tech: 'React SPA',
-    description: ['first react app'],
+    description: [
+      'production-grade deploy',
+      'zeit',
+      'material-ui',
+      'styled-components',
+      'jss',
+    ],
     buttonText: 'Code',
     buttonVariant: 'outlined',
+    link: 'https://github.com/sjangity/sandeepjangity.co',
+  },
+  {
+    title: 'letseatsoftware',
+    tech: 'React SSG',
+    description: ['custom blog'],
+    buttonText: 'Code',
+    buttonVariant: 'outlined',
+    link: 'https://github.com/sjangity/letseatsoftware.com',
+  },
+];
+
+const myThoughts = [
+  {
+    id: 'thought1',
+    concept: 'Web Performance',
+    description: 'Writing scalable Javascript on the Web',
+  },
+  // {
+  //   id: 'thought2',
+  //   concept: 'Itearative Innovation',
+  //   description: 'How to practice iterative learning?',
+  // },
+  {
+    id: 'thought4',
+    concept: 'Standards',
+    description: 'The web has evolved, but so has the complex tooling.',
+  },
+  {
+    id: 'thought3',
+    concept: 'Design Thinking',
+    description: 'What makes a Good Design, Good?',
   },
 ];
 
@@ -186,11 +229,15 @@ const masterStyles = {
   shareProject: {
     marginTop: '30px',
   },
+  pageFooter: {
+    padding: '30px 0px',
+  },
   // shareBoxFlexContainer: {
   //   display: 'flex',
   //   '> shareBoxFlexContainer': {},
   // },
 };
+
 class MasterContent extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   render() {
@@ -326,9 +373,34 @@ class MasterContent extends React.Component {
         </SectionHOC>
 
         <SectionHOC>
-          <Typography variant="h3">
-            I continue to build learn & Innovate
-          </Typography>
+          <Typography variant="h3">I CARE ABOUT</Typography>
+          <Container className={classes.cardGrid}>
+            <Grid container spacing={4}>
+              {myThoughts.map((thought) => (
+                <Grid item key={thought.id} xs={12 / myThoughts.length}>
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="https://source.unsplash.com/random"
+                      title="Image title"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {thought.concept}
+                      </Typography>
+                      <Typography>{thought.description}</Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+
+              {/* <Grid item xs={12}>
+                <Paper className={classes.pageFooter}>
+                  <Typography>Automation, automation, automation.</Typography>
+                </Paper>
+              </Grid> */}
+            </Grid>
+          </Container>
         </SectionHOC>
       </div>
     );

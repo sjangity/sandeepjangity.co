@@ -33,9 +33,7 @@ class PortfolioMaster extends Component {
         <RouteRenderer path="/" component={MasterContent} />
         <RouteRenderer path="/detail" component={DetailContent} />
 
-        <footer className="Centered" id="footer">
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     );
   }
