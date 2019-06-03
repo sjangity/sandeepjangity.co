@@ -2,10 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
-import { Grid, Paper, ButtonBase } from '@material-ui/core';
+import {
+  Container,
+  Card,
+  // CardActions,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  Grid,
+  Paper,
+  Button,
+  ButtonBase,
+} from '@material-ui/core';
+import Build from '@material-ui/icons/Build';
 import { withStyles } from '@material-ui/core/styles';
 // import { Link } from '../router';
+import StarIcon from '@material-ui/icons/StarBorder';
 import theme from '../theme';
+
+const ossProjects = [
+  {
+    title: 'sandeepjangity.co',
+    tech: 'React SPA',
+    description: ['first react app'],
+    buttonText: 'Code',
+    buttonVariant: 'outlined',
+  },
+];
 
 const heroStyles = makeStyles({
   root: {
@@ -68,7 +91,7 @@ function HeroSection() {
           <Grid item xs={8}>
             <Paper elevation={0}>
               <Typography variant="h4">
-                My MISSION is to master the Zen of Product Development
+                My MISSION is to do both with the Zen of Product Development
               </Typography>
             </Paper>
           </Grid>
@@ -130,9 +153,48 @@ CustomImage.propTypes = {
 };
 const ImageHOC = withStyles(imageStyles)(CustomImage);
 
+const masterStyles = {
+  '@global': {
+    body: {
+      backgroundColor: theme.palette.common.white,
+    },
+    ul: {
+      margin: 0,
+      padding: 0,
+    },
+    li: {
+      listStyle: 'none',
+    },
+  },
+  box: {
+    marginBottom: 40,
+    height: 65,
+  },
+  cardGrid: {
+    marginTop: 30,
+  },
+  grid: {
+    width: 1200,
+    marginTop: 40,
+  },
+  paper: {
+    // textAlign: 'center',
+  },
+  panelmax: {
+    width: '400px',
+  },
+  shareProject: {
+    marginTop: '30px',
+  },
+  // shareBoxFlexContainer: {
+  //   display: 'flex',
+  //   '> shareBoxFlexContainer': {},
+  // },
+};
 class MasterContent extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <HeroSection />
@@ -153,10 +215,114 @@ class MasterContent extends React.Component {
 
         <SectionHOC>
           <Typography variant="h3">I BLOG</Typography>
+
+          <Container className={classes.cardGrid}>
+            <Grid container spacing={4}>
+              <Grid item key="some1" xs={12} sm={6}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Heading
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe
+                      the content.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item key="some2" xs={12} sm={6}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Heading
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe
+                      the content.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Container>
         </SectionHOC>
 
         <SectionHOC alt={1}>
           <Typography variant="h3">I SHARE</Typography>
+          <Grid container spacing={0}>
+            {ossProjects.map((tier) => (
+              <Grid
+                item
+                key={tier.title}
+                xs={12}
+                container
+                alignItems="center"
+                className={classes.shareProject}
+              >
+                <Grid item xs={3}>
+                  {/* <Build style={{ fontSize: 72 }} fontSize={'large'} /> */}
+                  <Build fontSize={'large'} />
+                  <Button fullWidth variant={tier.buttonVariant}>
+                    {tier.buttonText}
+                  </Button>
+                </Grid>
+                <Grid item xs={9}>
+                  <Card>
+                    <CardHeader
+                      title={tier.title}
+                      subheader={tier.subheader}
+                      titleTypographyProps={{ align: 'center' }}
+                      subheaderTypographyProps={{ align: 'center' }}
+                      action={tier.title === 'Pro' ? <StarIcon /> : null}
+                      className={classes.cardHeader}
+                    />
+                    <CardContent>
+                      <div className={classes.cardPricing}>
+                        <Typography
+                          component="h2"
+                          variant="h3"
+                          color="textPrimary"
+                        >
+                          {tier.tech}
+                        </Typography>
+                        <Typography variant="h6" color="textSecondary">
+                          react, webpack, babel, etc.,
+                        </Typography>
+                      </div>
+                      <ul>
+                        {tier.description.map((line) => (
+                          <Typography
+                            component="li"
+                            variant="subtitle1"
+                            align="center"
+                            key={line}
+                          >
+                            {line}
+                          </Typography>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    {/* <CardActions>
+                      <Button fullWidth variant={tier.buttonVariant}>
+                        {tier.buttonText}
+                      </Button>
+                    </CardActions> */}
+                  </Card>
+                </Grid>
+              </Grid>
+            ))}
+          </Grid>
         </SectionHOC>
 
         <SectionHOC>
@@ -168,5 +334,9 @@ class MasterContent extends React.Component {
     );
   }
 }
+MasterContent.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+const MasterHOC = withStyles(masterStyles)(MasterContent);
 
-export default MasterContent;
+export default MasterHOC;
