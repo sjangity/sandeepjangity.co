@@ -15,13 +15,8 @@ class PortfolioMaster extends Component {
     return (
       <div className="App">
         <Container maxWidth="sm" component="main">
-          <Typography
-            variant="h5"
-            align="center"
-            color="textSecondary"
-            component="p"
-          >
-            11 years living, breathing startups as an ENGINEER.
+          <Typography variant="h6" color="textSecondary" component="p">
+            11 years living, breathing startups as a FULL STACK ENGINEER.
           </Typography>
         </Container>
 

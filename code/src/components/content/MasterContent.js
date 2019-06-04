@@ -139,7 +139,7 @@ function HeroSection() {
         </Grid>
         <Grid item xs={8}>
           <Typography variant="h2" gutterBottom>
-            Building products people want is HARD.
+            Building successful consumer web products is HARD.
           </Typography>
           {/* <Typography
             variant="h5"
@@ -151,7 +151,7 @@ function HeroSection() {
           </Typography> */}
 
           <Typography variant="h5" gutterBottom>
-            Hiring tech teams that can incrementally deliver value is HARD.
+            Hiring the right tech teams to drive user-value is hard.
           </Typography>
 
           <Link to="/detail">I want to help make it easier</Link>
@@ -344,23 +344,23 @@ class MasterContent extends React.Component {
               </Grid>
               <Grid item xs={3}>
                 <Typography variant="h5" className={classes.listenMore}>
-                  Building niche products is not the hardest part. Traffic graph
-                  from one of my own.
+                  Traction is not the hardest part. Traffic graph from one of my
+                  online web products.
                 </Typography>
 
                 <Typography className={classes.listenMore}>
                   The HARDEST part is learning to listen...
                 </Typography>
 
-                <Typography variant="h5" className={classes.listenMore}>
+                {/* <Typography variant="h5" className={classes.listenMore}>
                   Thats the secret of the TOP 1%
-                </Typography>
+                </Typography> */}
               </Grid>
-              {/* <Grid item xs={12}>
+              <Grid item xs={12}>
                 <Typography variant="h4">
                   Thats the secret of the TOP 1%
                 </Typography>
-              </Grid> */}
+              </Grid>
             </Grid>
           </Container>
         </SectionHOC>
@@ -411,7 +411,9 @@ class MasterContent extends React.Component {
         </SectionHOC> */}
 
         <SectionHOC>
-          <Typography variant="h3">I LISTEN BY WRITING OSS</Typography>
+          <Typography variant="h3">
+            I LISTEN TO FEEDBACK BY WRITING OSS
+          </Typography>
           {/* <div
             style={{
               display: 'flex',
@@ -520,7 +522,7 @@ class MasterContent extends React.Component {
         <SectionHOC>
           <Typography variant="h3">In case you missed it.</Typography>
           <Typography variant="h5">
-            Whats the secret to successfull product development?
+            Whats the secret to successfull products?
           </Typography>
           <Button
             variant="contained"
