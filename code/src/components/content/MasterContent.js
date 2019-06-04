@@ -1,30 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import {
-  makeStyles,
-  // styled
-} from '@material-ui/styles';
-// import styled from 'styled-components';
+
 import {
   Container,
   Card,
-  // CardActions,
   CardHeader,
   CardMedia,
   CardContent,
   Grid,
-  // Divider,
   Paper,
   Button,
-  ButtonBase,
 } from '@material-ui/core';
 
 // import Build from '@material-ui/icons/Build';
 import { withStyles } from '@material-ui/core/styles';
 import StarIcon from '@material-ui/icons/StarBorder';
-import { Link } from '../router';
 import theme from '../theme';
+import SectionHOC from '../composition/hoc/SectionHOC';
+import ImageHOC from '../composition/hoc/ImageHOC';
+import HeroSection from '../composition/standard/HeroSection';
 
 const ossProjects = [
   {
@@ -73,11 +68,6 @@ const myThoughts = [
     concept: 'On Performance',
     description: 'Writing scalable Javascript on the Web',
   },
-  // {
-  //   id: 'thought2',
-  //   concept: 'Itearative Innovation',
-  //   description: 'How to practice iterative learning?',
-  // },
   {
     id: 'thought4',
     concept: 'On Standards',
@@ -89,186 +79,6 @@ const myThoughts = [
     description: 'What makes a Good Design, Good?',
   },
 ];
-
-const heroStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-    // background: theme.palette.primary.main,
-    textAlign: 'center',
-    textTransform: 'uppercase',
-  },
-  paper: {
-    // padding: theme.spacing(2),
-    // margin: 'auto',
-    textAlign: 'center',
-    // background: theme.palette.primary.main,
-  },
-  // image: {
-  //   width: 150,
-  //   height: 150,
-  // },
-  img: {
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
-  },
-  outlinedButtom: {
-    textTransform: 'uppercase',
-    // margin: theme.spacing.unit,
-  },
-});
-function HeroSection() {
-  const classes = heroStyles();
-  return (
-    <div className={classes.root}>
-      <Grid container justify="center" alignItems="center" spacing={3}>
-        <Grid item xs={2}>
-          <Paper elevation={0} className={classes.paper}>
-            <ButtonBase className={classes.image}>
-              <img
-                className={classes.img}
-                alt="complex"
-                src="/images/profile2.png"
-              />
-            </ButtonBase>
-            <Typography>
-              My name is Sandeep Jangity. I am a Techpreneur.
-            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={8}>
-          <Typography variant="h2" gutterBottom>
-            Building successful consumer web products is HARD.
-          </Typography>
-          {/* <Typography
-            variant="h5"
-            align="center"
-            color="textSecondary"
-            component="p"
-          >
-            I spent the last 11 years living, breathing startups as an ENGINEER.
-          </Typography> */}
-
-          <Typography variant="h5" gutterBottom>
-            Hiring the right tech teams to drive user-value is hard.
-          </Typography>
-
-          <Link to="/detail">I want to help make it easier</Link>
-
-          {/* <Button
-            variant="contained"
-            color="secondary"
-            href="/detail"
-            size="large"
-          >
-            I want to help make it easier
-          </Button> */}
-        </Grid>
-        <Grid item xs={2} />
-        {/* <Grid item xs={2} />
-        <Grid item xs={10}>
-          <div>
-            <h2>
-              As a Full Stack Engineer and a Techpreneur, the last 7 years has
-              profoundly changed me
-            </h2>
-            <ul>
-              <li>I went through 1 IPO, </li>
-              <li>
-                spent 4 years building products for startups that no one wanted,
-              </li>
-              <li>AND</li>
-            </ul>
-          </div>
-        </Grid> */}
-      </Grid>
-      {/* <Grid container>
-        <Grid item container>
-          <Grid item xs={4}>
-            <Paper elevation={0} className={classes.paper}>
-              <Typography variant="h5">1 IPO</Typography>
-              <Typography variant="h6">9 Failures</Typography>
-            </Paper>
-          </Grid>
-          <Grid item xs={8}>
-            <Paper elevation={0}>
-              <Typography variant="h4">
-                My MISSION is to do both with the{' '}
-                <Link to="/detail">Zen of Product Development</Link>
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Grid> */}
-    </div>
-  );
-}
-
-const sectionStyles = {
-  paper: {
-    padding: '3em 0 4.5em',
-    elevation: 0,
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    '&:nth-child(even)': {
-      backgroundColor: theme.palette.primary.main,
-    },
-  },
-  paperSpecial: {
-    padding: '3em 0 4.5em',
-    elevation: 0,
-    textAlign: 'center',
-    background: theme.palette.secondary,
-  },
-};
-class SectionPanel extends React.Component {
-  render() {
-    const { classes } = this.props;
-    const isSpecial = !!this.props.isSpecial;
-    return (
-      <React.Fragment>
-        <Paper
-          elevation={0}
-          className={classes.paper}
-          style={isSpecial ? { background: theme.palette.secondary.main } : {}}
-        >
-          <Grid container justify="center" spacing={3}>
-            <Grid item xs={12}>
-              {this.props.children}
-            </Grid>
-          </Grid>
-        </Paper>
-      </React.Fragment>
-    );
-  }
-}
-SectionPanel.propTypes = {
-  classes: PropTypes.object.isRequired,
-  children: PropTypes.any,
-  isSpecial: PropTypes.bool,
-};
-const SectionHOC = withStyles(sectionStyles)(SectionPanel);
-
-const imageStyles = {
-  root: {
-    margin: '20px',
-    display: 'block',
-    maxWidth: 'calc(100% - 40px)',
-    maxHeight: '100%',
-  },
-};
-class CustomImage extends React.Component {
-  render() {
-    const { classes } = this.props;
-    return <img alt="complex" src={this.props.src} className={classes.root} />;
-  }
-}
-CustomImage.propTypes = {
-  src: PropTypes.string.isRequired,
-  classes: PropTypes.object.isRequired,
-};
-const ImageHOC = withStyles(imageStyles)(CustomImage);
 
 const masterStyles = {
   '@global': {
@@ -351,10 +161,6 @@ class MasterContent extends React.Component {
                 <Typography className={classes.listenMore}>
                   The HARDEST part is learning to listen...
                 </Typography>
-
-                {/* <Typography variant="h5" className={classes.listenMore}>
-                  Thats the secret of the TOP 1%
-                </Typography> */}
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="h4">

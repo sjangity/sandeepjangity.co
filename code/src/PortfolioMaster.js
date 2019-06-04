@@ -20,10 +20,6 @@ class PortfolioMaster extends Component {
           </Typography>
         </Container>
 
-        {/* <header className="Header Centered">
-          <h3>8 years as a web, mobile engineer at startups. Hire me.</h3>
-        </header> */}
-
         {/* let's specify some dyanmic routes */}
         <RouteRenderer path="/" component={MasterContent} />
         <RouteRenderer path="/detail" component={DetailContent} />
