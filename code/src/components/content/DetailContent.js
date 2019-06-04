@@ -20,6 +20,7 @@ import Box from '@material-ui/core/Box';
 import ImageHOC from '../composition/hoc/ImageHOC';
 import theme from '../theme';
 import SectionHOC from '../composition/hoc/SectionHOC';
+import ProfileCardList from '../composition/hooks/ProfileCardList';
 
 const detailStyles = {
   root: {},
@@ -163,6 +164,7 @@ class DetailContent extends Component {
           <Typography variant="h3">
             PROFESSIONAL PROJECTS (OPEN-SOURCED)
           </Typography>
+          <ProfileCardList />
         </SectionHOC>
 
         {/* <section className="PanelHero Centered" id="hero">
