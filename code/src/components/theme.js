@@ -10,9 +10,9 @@ let theme = createMuiTheme({
       contrastText: '#000',
     },
     secondary: {
-      light: '#b5ffff',
-      main: '#81e8dd',
-      dark: '#4cb5ab',
+      light: '#8afff5',
+      main: '#50E3C2',
+      dark: '#00b092',
       contrastText: '#000',
     },
   },
