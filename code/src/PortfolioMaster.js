@@ -21,7 +21,7 @@ class PortfolioMaster extends Component {
             color="textSecondary"
             component="p"
           >
-            8 years as a web, mobile engineer at startups. Hire me.
+            11 years living, breathing startups as an ENGINEER.
           </Typography>
         </Container>
 

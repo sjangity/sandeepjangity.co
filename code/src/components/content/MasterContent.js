@@ -14,15 +14,16 @@ import {
   CardMedia,
   CardContent,
   Grid,
+  // Divider,
   Paper,
   Button,
   ButtonBase,
 } from '@material-ui/core';
 
-import Build from '@material-ui/icons/Build';
+// import Build from '@material-ui/icons/Build';
 import { withStyles } from '@material-ui/core/styles';
-// import { Link } from '../router';
 import StarIcon from '@material-ui/icons/StarBorder';
+import { Link } from '../router';
 import theme from '../theme';
 
 const ossProjects = [
@@ -41,19 +42,35 @@ const ossProjects = [
     link: 'https://github.com/sjangity/sandeepjangity.co',
   },
   {
-    title: 'letseatsoftware',
+    title: 'letseatsoftware.com',
     tech: 'React SSG',
     description: ['custom blog'],
     buttonText: 'Code',
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/letseatsoftware.com',
   },
+  {
+    title: 'fastrouteapp.com',
+    tech: 'Native iOS Client (Swift)',
+    description: ['swift client'],
+    buttonText: 'Code',
+    buttonVariant: 'outlined',
+    link: 'https://github.com/sjangity/fastrouteapp-ios',
+  },
+  {
+    title: 'peerflight.com',
+    tech: 'Native iOS Client (Obj-C)',
+    description: ['web-mobile integrated app'],
+    buttonText: 'Code',
+    buttonVariant: 'outlined',
+    link: 'https://github.com/sjangity/peerflight-ios',
+  },
 ];
 
 const myThoughts = [
   {
     id: 'thought1',
-    concept: 'Web Performance',
+    concept: 'On Performance',
     description: 'Writing scalable Javascript on the Web',
   },
   // {
@@ -63,12 +80,12 @@ const myThoughts = [
   // },
   {
     id: 'thought4',
-    concept: 'Standards',
+    concept: 'On Standards',
     description: 'The web has evolved, but so has the complex tooling.',
   },
   {
     id: 'thought3',
-    concept: 'Design Thinking',
+    concept: 'On Design Thinking',
     description: 'What makes a Good Design, Good?',
   },
 ];
@@ -76,11 +93,15 @@ const myThoughts = [
 const heroStyles = makeStyles({
   root: {
     flexGrow: 1,
+    // background: theme.palette.primary.main,
+    textAlign: 'center',
+    textTransform: 'uppercase',
   },
   paper: {
     // padding: theme.spacing(2),
     // margin: 'auto',
     textAlign: 'center',
+    // background: theme.palette.primary.main,
   },
   // image: {
   //   width: 150,
@@ -101,29 +122,68 @@ function HeroSection() {
   const classes = heroStyles();
   return (
     <div className={classes.root}>
-      <Grid container justify="center">
-        <Grid item xs={4}>
+      <Grid container justify="center" alignItems="center" spacing={3}>
+        <Grid item xs={2}>
           <Paper elevation={0} className={classes.paper}>
             <ButtonBase className={classes.image}>
               <img
                 className={classes.img}
                 alt="complex"
-                src="/images/profile.png"
+                src="/images/profile2.png"
               />
             </ButtonBase>
-            <Typography>11 years as a Frontend/Backend Developer</Typography>
+            <Typography>
+              My name is Sandeep Jangity. I am a Techpreneur.
+            </Typography>
           </Paper>
         </Grid>
         <Grid item xs={8}>
           <Typography variant="h2" gutterBottom>
-            Building products people want is hard, really hard.
+            Building products people want is HARD.
           </Typography>
-          <Typography variant="h3" gutterBottom>
-            Hiring teams that can incrementally deliver value is equally hard.
+          {/* <Typography
+            variant="h5"
+            align="center"
+            color="textSecondary"
+            component="p"
+          >
+            I spent the last 11 years living, breathing startups as an ENGINEER.
+          </Typography> */}
+
+          <Typography variant="h5" gutterBottom>
+            Hiring tech teams that can incrementally deliver value is HARD.
           </Typography>
+
+          <Link to="/detail">I want to help make it easier</Link>
+
+          {/* <Button
+            variant="contained"
+            color="secondary"
+            href="/detail"
+            size="large"
+          >
+            I want to help make it easier
+          </Button> */}
         </Grid>
+        <Grid item xs={2} />
+        {/* <Grid item xs={2} />
+        <Grid item xs={10}>
+          <div>
+            <h2>
+              As a Full Stack Engineer and a Techpreneur, the last 7 years has
+              profoundly changed me
+            </h2>
+            <ul>
+              <li>I went through 1 IPO, </li>
+              <li>
+                spent 4 years building products for startups that no one wanted,
+              </li>
+              <li>AND</li>
+            </ul>
+          </div>
+        </Grid> */}
       </Grid>
-      <Grid container>
+      {/* <Grid container>
         <Grid item container>
           <Grid item xs={4}>
             <Paper elevation={0} className={classes.paper}>
@@ -134,12 +194,13 @@ function HeroSection() {
           <Grid item xs={8}>
             <Paper elevation={0}>
               <Typography variant="h4">
-                My MISSION is to do both with the Zen of Product Development
+                My MISSION is to do both with the{' '}
+                <Link to="/detail">Zen of Product Development</Link>
               </Typography>
             </Paper>
           </Grid>
         </Grid>
-      </Grid>
+      </Grid> */}
     </div>
   );
 }
@@ -149,17 +210,29 @@ const sectionStyles = {
     padding: '3em 0 4.5em',
     elevation: 0,
     textAlign: 'center',
+    textTransform: 'uppercase',
     '&:nth-child(even)': {
       backgroundColor: theme.palette.primary.main,
     },
+  },
+  paperSpecial: {
+    padding: '3em 0 4.5em',
+    elevation: 0,
+    textAlign: 'center',
+    background: theme.palette.secondary,
   },
 };
 class SectionPanel extends React.Component {
   render() {
     const { classes } = this.props;
+    const isSpecial = !!this.props.isSpecial;
     return (
       <React.Fragment>
-        <Paper elevation={0} className={classes.paper}>
+        <Paper
+          elevation={0}
+          className={classes.paper}
+          style={isSpecial ? { background: theme.palette.secondary.main } : {}}
+        >
           <Grid container justify="center" spacing={3}>
             <Grid item xs={12}>
               {this.props.children}
@@ -173,6 +246,7 @@ class SectionPanel extends React.Component {
 SectionPanel.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.any,
+  isSpecial: PropTypes.bool,
 };
 const SectionHOC = withStyles(sectionStyles)(SectionPanel);
 
@@ -227,15 +301,27 @@ const masterStyles = {
     width: '400px',
   },
   shareProject: {
-    marginTop: '30px',
+    // marginTop: '30px',
   },
   pageFooter: {
     padding: '30px 0px',
   },
-  // shareBoxFlexContainer: {
-  //   display: 'flex',
-  //   '> shareBoxFlexContainer': {},
-  // },
+  ossGrid: {
+    display: 'flex',
+    // border: '5px solid red',
+    justifyContent: 'space-around',
+  },
+  ossGridItem: {
+    margin: 16,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  listenMore: {
+    marginBottom: '30px',
+  },
+  specialSection: {
+    background: theme.palette.secondary,
+  },
 };
 
 class MasterContent extends React.Component {
@@ -246,21 +332,40 @@ class MasterContent extends React.Component {
       <div>
         <HeroSection />
 
-        <SectionHOC alt={1}>
-          <Typography variant="h4">
-            0 marketing, 2-month launch cycles, 50K registered conversions on
-            products I’ve conceived is a noteable accomplishment; however....
+        <SectionHOC>
+          <Typography variant="h3">
+            50,000 ORGANIC REGISTRATIONS LATER. FAILURE #9.
           </Typography>
 
-          <ImageHOC src="/images/product-stats.png" />
+          <Container>
+            <Grid container style={{ alignItems: 'center' }}>
+              <Grid item xs={9}>
+                <ImageHOC src="/images/product-stats.png" />
+              </Grid>
+              <Grid item xs={3}>
+                <Typography variant="h5" className={classes.listenMore}>
+                  Building niche products is not the hardest part. Traffic graph
+                  from one of my own.
+                </Typography>
 
-          <Typography variant="h5">
-            I see my last 12-years in startups as only the beginn of my Zen
-            journey, and so...
-          </Typography>
+                <Typography className={classes.listenMore}>
+                  The HARDEST part is learning to listen...
+                </Typography>
+
+                <Typography variant="h5" className={classes.listenMore}>
+                  Thats the secret of the TOP 1%
+                </Typography>
+              </Grid>
+              {/* <Grid item xs={12}>
+                <Typography variant="h4">
+                  Thats the secret of the TOP 1%
+                </Typography>
+              </Grid> */}
+            </Grid>
+          </Container>
         </SectionHOC>
 
-        <SectionHOC>
+        {/* <SectionHOC>
           <Typography variant="h3">I BLOG</Typography>
 
           <Container className={classes.cardGrid}>
@@ -303,77 +408,84 @@ class MasterContent extends React.Component {
               </Grid>
             </Grid>
           </Container>
-        </SectionHOC>
+        </SectionHOC> */}
 
-        <SectionHOC alt={1}>
-          <Typography variant="h3">I SHARE</Typography>
-          <Grid container spacing={0}>
+        <SectionHOC>
+          <Typography variant="h3">I LISTEN BY WRITING OSS</Typography>
+          {/* <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              border: '5px solid red',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
+          >
+            {ossProjects.map((tier) => (
+              <div
+                key={tier.title}
+                style={{
+                  backgroundColor: '#fff',
+                  padding: '40px',
+                  margin: '10px',
+                }}
+              >
+                <Typography gutterBottom variant="h5" component="h2">
+                  {tier.title}
+                </Typography>
+              </div>
+            ))}
+          </div> */}
+
+          <Grid container spacing={0} className={classes.ossGrid}>
             {ossProjects.map((tier) => (
               <Grid
-                item
                 key={tier.title}
-                xs={12}
-                container
-                alignItems="center"
-                className={classes.shareProject}
+                item
+                xs={3}
+                component={Card}
+                className={classes.ossGridItem}
               >
-                <Grid item xs={3}>
-                  {/* <Build style={{ fontSize: 72 }} fontSize={'large'} /> */}
-                  <Build fontSize={'large'} />
-                  <Button fullWidth variant={tier.buttonVariant}>
-                    {tier.buttonText}
-                  </Button>
-                </Grid>
-                <Grid item xs={9}>
-                  <Card>
-                    <CardHeader
-                      title={tier.title}
-                      subheader={tier.subheader}
-                      titleTypographyProps={{ align: 'center' }}
-                      subheaderTypographyProps={{ align: 'center' }}
-                      action={tier.title === 'Pro' ? <StarIcon /> : null}
-                      className={classes.cardHeader}
-                    />
-                    <CardContent>
-                      <div className={classes.cardPricing}>
-                        <Typography
-                          component="h2"
-                          variant="h3"
-                          color="textPrimary"
-                        >
-                          {tier.tech}
-                        </Typography>
-                        <Typography variant="h6" color="textSecondary">
-                          react, webpack, babel, etc.,
-                        </Typography>
-                      </div>
-                      <ul>
-                        {tier.description.map((line) => (
-                          <Typography
-                            component="li"
-                            variant="subtitle1"
-                            align="center"
-                            key={line}
-                          >
-                            {line}
-                          </Typography>
-                        ))}
-                      </ul>
-                    </CardContent>
-                    {/* <CardActions>
-                      <Button fullWidth variant={tier.buttonVariant}>
-                        {tier.buttonText}
-                      </Button>
-                    </CardActions> */}
-                  </Card>
-                </Grid>
+                <CardHeader
+                  title={tier.title}
+                  subheader={tier.subheader}
+                  titleTypographyProps={{ align: 'center' }}
+                  subheaderTypographyProps={{ align: 'center' }}
+                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  className={classes.cardHeader}
+                />
+                <CardContent>
+                  <div className={classes.cardPricing}>
+                    <Typography component="h2" variant="h3" color="textPrimary">
+                      {tier.tech}
+                    </Typography>
+                    <Typography variant="h6" color="textSecondary">
+                      Highlights
+                    </Typography>
+                  </div>
+                  <ul>
+                    {tier.description.map((line) => (
+                      <Typography
+                        component="li"
+                        variant="subtitle1"
+                        align="center"
+                        key={line}
+                      >
+                        {line}
+                      </Typography>
+                    ))}
+                  </ul>
+                </CardContent>
               </Grid>
             ))}
           </Grid>
         </SectionHOC>
 
         <SectionHOC>
-          <Typography variant="h3">I CARE ABOUT</Typography>
+          <Typography variant="h3">
+            I listen by asking deeper questions
+          </Typography>
           <Container className={classes.cardGrid}>
             <Grid container spacing={4}>
               {myThoughts.map((thought) => (
@@ -394,13 +506,30 @@ class MasterContent extends React.Component {
                 </Grid>
               ))}
 
-              {/* <Grid item xs={12}>
+              <Grid item xs={12}>
                 <Paper className={classes.pageFooter}>
-                  <Typography>Automation, automation, automation.</Typography>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    On Automation
+                  </Typography>
                 </Paper>
-              </Grid> */}
+              </Grid>
             </Grid>
           </Container>
+        </SectionHOC>
+
+        <SectionHOC>
+          <Typography variant="h3">In case you missed it.</Typography>
+          <Typography variant="h5">
+            Whats the secret to successfull product development?
+          </Typography>
+          <Button
+            variant="contained"
+            color="secondary"
+            href="/detail"
+            size="large"
+          >
+            Deeply empathesize with your users
+          </Button>
         </SectionHOC>
       </div>
     );
