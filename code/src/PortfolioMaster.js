@@ -21,8 +21,8 @@ class PortfolioMaster extends Component {
         </Container>
 
         {/* let's specify some dyanmic routes */}
-        <RouteRenderer path="/detail" component={MasterContent} />
-        <RouteRenderer path="/" component={DetailContent} />
+        <RouteRenderer path="/" component={MasterContent} />
+        <RouteRenderer path="/detail" component={DetailContent} />
 
         <Footer />
       </div>
