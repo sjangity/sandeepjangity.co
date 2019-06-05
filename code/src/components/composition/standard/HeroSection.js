@@ -3,7 +3,8 @@ import Typography from '@material-ui/core/Typography';
 
 import { makeStyles } from '@material-ui/styles';
 import { Grid, Paper, ButtonBase } from '@material-ui/core';
-import { Link } from '../../router';
+// import { Link } from '../../router';
+import { Link } from 'react-router-dom';
 
 const heroStyles = makeStyles({
   root: {

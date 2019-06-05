@@ -12,15 +12,17 @@ class RouteRenderer extends Component {
   render() {
     // debugger;
     return (
-      <RouteContext.Consumer>
-        {(contextValue) => (
-          <div>
-            {contextValue.route === this.props.path
-              ? React.createElement(this.props.component)
-              : null}
-          </div>
-        )}
-      </RouteContext.Consumer>
+      <React.Fragment>
+        <RouteContext.Consumer>
+          {(contextValue) => (
+            <div>
+              {contextValue.route === this.props.path
+                ? React.createElement(this.props.component)
+                : null}
+            </div>
+          )}
+        </RouteContext.Consumer>
+      </React.Fragment>
     );
   }
 }

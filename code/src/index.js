@@ -6,13 +6,14 @@ import ReactDOM from 'react-dom';
 // import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import NoSsr from '@material-ui/core/NoSsr';
 import { ThemeProvider } from '@material-ui/styles';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 import theme from './components/theme';
 
 import PortfolioMaster from './PortfolioMaster';
 import DefaultErrorBoundary from './DefaultErrorBoundary';
-import Router from './components/router/Router';
+// import Router from './components/router/Router';
 
 // NODE_ENV is available through webpack build process and which mode is set
 // Look for accessibility violations in rendered DOM
@@ -26,13 +27,11 @@ ReactDOM.render(
   // <App is now the child of the <Router component
   <React.StrictMode>
     <DefaultErrorBoundary>
-      <Router>
-        <NoSsr>
-          <ThemeProvider theme={theme}>
-            <PortfolioMaster />
-          </ThemeProvider>
-        </NoSsr>
-      </Router>
+      <NoSsr>
+        <ThemeProvider theme={theme}>
+          <PortfolioMaster />
+        </ThemeProvider>
+      </NoSsr>
     </DefaultErrorBoundary>
   </React.StrictMode>,
   document.getElementById('app'),
