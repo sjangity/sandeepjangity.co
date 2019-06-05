@@ -22,8 +22,8 @@ class PortfolioMaster extends Component {
             </Typography>
           </Container>
 
-          <Route exact path="/" component={MasterContent} />
-          <Route exact path="/detail" component={DetailContent} />
+          <Route path="/" exact component={MasterContent} />
+          <Route path="/detail" component={DetailContent} />
 
           {/* <RouteRenderer path="/" component={MasterContent} />
           <RouteRenderer path="/detail" component={DetailContent} /> */}
