@@ -10,12 +10,13 @@ import {
   CardContent,
   Grid,
   Paper,
-  Button,
 } from '@material-ui/core';
 
 // import Build from '@material-ui/icons/Build';
 import { withStyles } from '@material-ui/core/styles';
 import StarIcon from '@material-ui/icons/StarBorder';
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 import theme from '../theme';
 import SectionHOC from '../composition/hoc/SectionHOC';
 import ImageHOC from '../composition/hoc/ImageHOC';
@@ -132,6 +133,24 @@ const masterStyles = {
   specialSection: {
     background: theme.palette.secondary,
   },
+  cta: {
+    background: theme.palette.secondary.main,
+    borderRadius: 3,
+    lineHeight: 1.75,
+    padding: '6px 16px',
+    border: 0,
+    color: theme.palette.secondary.contrastText,
+    height: 48,
+    '&:hover': {
+      textDecoration: 'none',
+      '@media (hover: none)': {
+        backgroundColor: 'transparent',
+      },
+      '&$disabled': {
+        backgroundColor: 'transparent',
+      },
+    },
+  },
 };
 
 class MasterContent extends React.Component {
@@ -144,7 +163,7 @@ class MasterContent extends React.Component {
 
         <SectionHOC>
           <Typography variant="h3">
-            50,000 ORGANIC REGISTRATIONS LATER. FAILURE #9.
+            50,000 ORGANIC REGISTRATIONS LATER
           </Typography>
 
           <Container>
@@ -154,17 +173,19 @@ class MasterContent extends React.Component {
               </Grid>
               <Grid item xs={3}>
                 <Typography variant="h5" className={classes.listenMore}>
-                  Traction is not the hardest part. Traffic graph from one of my
-                  online web products.
+                  Traction is not the hardest part.
                 </Typography>
 
                 <Typography className={classes.listenMore}>
                   The HARDEST part is learning to listen...
                 </Typography>
+                <Typography variant="h5">
+                  Thats the secret of the TOP 1%
+                </Typography>
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="h4">
-                  Thats the secret of the TOP 1%
+                  Traffic graph from one of my online web products
                 </Typography>
               </Grid>
             </Grid>
@@ -220,31 +241,6 @@ class MasterContent extends React.Component {
           <Typography variant="h3">
             I LISTEN TO FEEDBACK BY WRITING OSS
           </Typography>
-          {/* <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              border: '5px solid red',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-            }}
-          >
-            {ossProjects.map((tier) => (
-              <div
-                key={tier.title}
-                style={{
-                  backgroundColor: '#fff',
-                  padding: '40px',
-                  margin: '10px',
-                }}
-              >
-                <Typography gutterBottom variant="h5" component="h2">
-                  {tier.title}
-                </Typography>
-              </div>
-            ))}
-          </div> */}
 
           <Grid container spacing={0} className={classes.ossGrid}>
             {ossProjects.map((tier) => (
@@ -330,14 +326,15 @@ class MasterContent extends React.Component {
           <Typography variant="h5">
             Whats the secret to successfull products?
           </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            href="/detail"
-            size="large"
+          <Link
+            to="/portfolio"
+            component={RouterLink}
+            classes={{
+              root: classes.cta, // class name, e.g. `classes-nesting-root-x`
+            }}
           >
             Deeply empathesize with your users
-          </Button>
+          </Link>
         </SectionHOC>
       </div>
     );

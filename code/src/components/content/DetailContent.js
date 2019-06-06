@@ -83,7 +83,7 @@ class DetailContent extends Component {
       <div>
         <SectionHOC>
           <Typography variant="h3">
-            FROM LAMP to PYTHON to MOBILE to JS. I VE DONE IT ALL.
+            FROM LAMP to PYTHON to MOBILE to JS.
           </Typography>
           <div className={classes.pitchGrid}>
             <div className={classes.pitchGridItem}>
@@ -166,22 +166,6 @@ class DetailContent extends Component {
           </Typography>
           <ProfileCardList />
         </SectionHOC>
-
-        {/* <section className="PanelHero Centered" id="hero">
-          <div className="HeroProfile" />
-          <div>
-            <h1>
-              <span>
-                HIREe ME AND LET’S ZEN TOGETHER. I AM OPEN AN AVAILABLE.
-              </span>
-            </h1>
-          </div>
-
-          <h3>
-            <Link to="/">See what I have done</Link>
-          </h3>
-        </section>
- */}
       </div>
     );
   }
