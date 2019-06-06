@@ -60,7 +60,7 @@ export default function HeroSection() {
                 src="/images/profile2.png"
               />
             </ButtonBase>
-            <Typography>My name is Sandeep Jangity.</Typography>
+            {/* <Typography>My name is Sandeep Jangity.</Typography> */}
           </Paper>
         </Grid>
         <Grid item xs={8}>
@@ -83,7 +83,8 @@ export default function HeroSection() {
             component="p"
             style={{ textTransform: 'uppercase', margin: 30 }}
           >
-            11 years living, breathing startups as a FULL STACK ENGINEER.
+            11 years living, breathing startups as a FULL STACK ENGINEER. --
+            Sandeep Jangity
           </Typography>
         </Grid>
         <Grid item xs={2} />
