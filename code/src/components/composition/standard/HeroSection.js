@@ -83,8 +83,8 @@ export default function HeroSection() {
             component="p"
             style={{ textTransform: 'uppercase', margin: 30 }}
           >
-            11 years living, breathing startups as a FULL STACK ENGINEER. --
-            Sandeep Jangity
+            1 IPO and 11 years in bootstrapped startups as a FULL STACK HACKER
+            -- Sandeep Jangity
           </Typography>
         </Grid>
         <Grid item xs={2} />
