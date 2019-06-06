@@ -78,7 +78,7 @@ export default function HeroSection() {
             I want to help make it easier
           </Link>
           <Typography
-            variant="h7"
+            variant="h6"
             color="textSecondary"
             component="p"
             style={{ textTransform: 'uppercase', margin: 30 }}
