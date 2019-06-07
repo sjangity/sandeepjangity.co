@@ -125,7 +125,7 @@ class DetailContent extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <SectionHOC isGray={1}>
+        <SectionHOC>
           {/* <Typography variant="h3">
             FROM LAMP to PYTHON to MOBILE to JS.
           </Typography> */}
