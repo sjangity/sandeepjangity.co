@@ -1,4 +1,5 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -10,7 +11,7 @@ module.exports = {
   output: {
     // __dirname is a global in NODE
     path: path.join(__dirname, 'dist'),
-    filename: 'app.bundle.js',
+    filename: '[name].[contenthash].js',
   },
 
   module: {
@@ -33,6 +34,8 @@ module.exports = {
     ],
   },
   plugins: [
+    // clean build folder
+    new CleanWebpackPlugin(),
     // let webpack generate production HTML from our build step
     new HTMLWebpackPlugin({
       // provide a template that will be used to create the public/index.html file

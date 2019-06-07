@@ -6,7 +6,6 @@ import {
   Container,
   Card,
   CardHeader,
-  CardMedia,
   CardContent,
   Grid,
   Paper,
@@ -298,11 +297,6 @@ class MasterContent extends React.Component {
               {myThoughts.map((thought) => (
                 <Grid item key={thought.id} xs={12 / myThoughts.length}>
                   <Card className={classes.card}>
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
-                    />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
                         {thought.concept}
