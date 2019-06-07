@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 // import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -11,7 +11,7 @@ import { red } from '@material-ui/core/colors';
 import {
   Grid,
   Card,
-  Collapse,
+  // Collapse,
   CardHeader,
   CardContent,
   CardActions,
@@ -26,8 +26,10 @@ const useStyles = makeStyles((theme) => ({
   card: {
     // maxWidth: 500,
     // maxWidth: '100%',
-    width: 700,
+    width: 350,
     marginTop: 10,
+    aligItems: 'center',
+    justifyContent: 'center',
   },
   media: {
     // height: 0,
@@ -52,16 +54,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StackButton = styled.button`
-  background: ${(props) => (props.primary ? 'palevioletred' : 'white')};
-  color: ${(props) => (props.primary ? 'white' : 'palevioletred')};
+// const StackButton = styled.button`
+//   background: ${(props) => (props.primary ? 'palevioletred' : 'white')};
+//   color: ${(props) => (props.primary ? 'white' : 'palevioletred')};
 
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
-`;
+//   font-size: 1em;
+//   margin: 1em;
+//   padding: 0.25em 1em;
+//   border: 2px solid palevioletred;
+//   border-radius: 3px;
+// `;
 
 const CodeButton = styled.button`
   background: ${(props) => (props.primary ? 'palevioletred' : 'white')};
@@ -84,13 +86,13 @@ const CodeButton = styled.button`
 
 const ProfileCard = (props) => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  // const [expanded, setExpanded] = React.useState(false);
   const { project } = props;
   const isLiveLink = project.isLive ? project.url : 'GITHUB';
   const projectURL = project.isLive ? project.url : project.code;
-  function handleExpandClick() {
-    setExpanded(!expanded);
-  }
+  // function handleExpandClick() {
+  //   setExpanded(!expanded);
+  // }
   // if (project.isOpenDefault) {
   //   handleExpandClick();
   // }
@@ -152,16 +154,16 @@ const ProfileCard = (props) => {
             >
               <ExpandMoreIcon />
             </IconButton> */}
-            <StackButton
+            {/* <StackButton
               className={clsx(classes.expand, {
                 [classes.expandOpen]: expanded,
               })}
               onClick={handleExpandClick}
             >
               stack
-            </StackButton>
+            </StackButton> */}
           </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <div className={classes.expandedProject}>
                 {project.highlights.map((highlight, index) => (
@@ -169,7 +171,7 @@ const ProfileCard = (props) => {
                 ))}
               </div>
             </CardContent>
-          </Collapse>
+          </Collapse> */}
         </Card>
       </Grid>
     </React.Fragment>

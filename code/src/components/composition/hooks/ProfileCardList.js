@@ -6,6 +6,7 @@ import ProfileCard from './ProfileCard';
 const profileListStyles = {
   root: {
     marginTop: 30,
+    display: 'flex',
   },
 };
 

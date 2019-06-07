@@ -28,7 +28,6 @@ const ossProjects = [
     tech: 'React SPA',
     description: [
       'production-grade deploy',
-      'zeit',
       'material-ui',
       'styled-components',
       'jss',
@@ -40,23 +39,23 @@ const ossProjects = [
   {
     title: 'letseatsoftware.com',
     tech: 'React SSG',
-    description: ['custom blog'],
+    description: ['Headless CMS', 'GraphQL', 'MongoDB'],
     buttonText: 'Code',
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/letseatsoftware.com',
   },
   {
     title: 'fastrouteapp.com',
-    tech: 'Native iOS Client (Swift)',
-    description: ['swift client'],
+    tech: 'Native Swift Client',
+    description: [''],
     buttonText: 'Code',
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/fastrouteapp-ios',
   },
   {
     title: 'peerflight.com',
-    tech: 'Native iOS Client (Obj-C)',
-    description: ['web-mobile integrated app'],
+    tech: 'Native Obj-C Client',
+    description: ['Web-Mobile Integration'],
     buttonText: 'Code',
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/peerflight-ios',
@@ -72,7 +71,7 @@ const myThoughts = [
   {
     id: 'thought4',
     concept: 'On Standards',
-    description: 'The web has evolved, but so has the complex tooling.',
+    description: 'Incremental improvement, requires consensus.',
   },
   {
     id: 'thought3',
@@ -127,9 +126,9 @@ const masterStyles = {
     display: 'flex',
     flexDirection: 'column',
   },
-  listenMore: {
-    marginBottom: '30px',
-  },
+  // listenMore: {
+  //   marginBottom: '30px',
+  // },
   specialSection: {
     background: theme.palette.secondary,
   },
@@ -137,18 +136,12 @@ const masterStyles = {
     background: theme.palette.secondary.main,
     borderRadius: 3,
     lineHeight: 1.75,
-    padding: '6px 16px',
+    padding: '2em',
     border: 0,
     color: theme.palette.secondary.contrastText,
     height: 48,
     '&:hover': {
       textDecoration: 'none',
-      '@media (hover: none)': {
-        backgroundColor: 'transparent',
-      },
-      '&$disabled': {
-        backgroundColor: 'transparent',
-      },
     },
   },
 };
@@ -163,7 +156,7 @@ class MasterContent extends React.Component {
 
         <SectionHOC>
           <Typography variant="h3">
-            50,000 ORGANIC REGISTRATIONS LATER
+            1 MILLION PAGE VIEWS, 50K ORGANIC REGISTRATIONS, ZERO PR-MARKETING
           </Typography>
 
           <Container>
@@ -173,19 +166,29 @@ class MasterContent extends React.Component {
               </Grid>
               <Grid item xs={3}>
                 <Typography variant="h5" className={classes.listenMore}>
-                  Traction is not the hardest part.
+                  Traction is not the hardest part
                 </Typography>
 
-                <Typography className={classes.listenMore}>
-                  The HARDEST part is learning to listen...
-                </Typography>
+                <Paper
+                  eleveation={0}
+                  style={{
+                    background: 'white',
+                    padding: '5px',
+                    margin: '30px 0',
+                  }}
+                >
+                  <Typography variant="h6">
+                    It is about learning to listen...
+                  </Typography>
+                </Paper>
                 <Typography variant="h5">
-                  Thats the secret of the TOP 1%
+                  Thats the secret to building great tech teams that can drive
+                  user value
                 </Typography>
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="h4">
-                  Traffic graph from one of my online web products
+                  Traffic graph from one of my online web properties
                 </Typography>
               </Grid>
             </Grid>
@@ -322,10 +325,10 @@ class MasterContent extends React.Component {
         </SectionHOC>
 
         <SectionHOC>
-          <Typography variant="h3">In case you missed it.</Typography>
-          <Typography variant="h5">
-            Whats the secret to successfull products?
+          <Typography variant="h3" style={{ marginBottom: 50 }}>
+            In case you missed it.
           </Typography>
+
           <Link
             to="/portfolio"
             component={RouterLink}
@@ -333,7 +336,8 @@ class MasterContent extends React.Component {
               root: classes.cta, // class name, e.g. `classes-nesting-root-x`
             }}
           >
-            Deeply empathesize with your users
+            Deeply empathesize with your users at all levels of the product
+            pipeline
           </Link>
         </SectionHOC>
       </div>

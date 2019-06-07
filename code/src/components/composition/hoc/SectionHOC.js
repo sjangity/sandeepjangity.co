@@ -19,19 +19,18 @@ const sectionStyles = {
     padding: '3em 0 4.5em',
     elevation: 0,
     textAlign: 'center',
-    background: theme.palette.secondary,
   },
 };
 class SectionPanel extends React.Component {
   render() {
     const { classes } = this.props;
-    const isSpecial = !!this.props.isSpecial;
+    const isGray = !!this.props.isGray;
     return (
       <React.Fragment>
         <Paper
           elevation={0}
           className={classes.paper}
-          style={isSpecial ? { background: theme.palette.secondary.main } : {}}
+          style={isGray ? { background: '#fff' } : {}}
         >
           <Grid container justify="center" spacing={3}>
             <Grid item xs={12}>
@@ -47,6 +46,7 @@ SectionPanel.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.any,
   isSpecial: PropTypes.bool,
+  isGray: PropTypes.bool,
 };
 
 export default withStyles(sectionStyles)(SectionPanel);
