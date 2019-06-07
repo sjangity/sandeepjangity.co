@@ -8,12 +8,15 @@ import NoSsr from '@material-ui/core/NoSsr';
 import { ThemeProvider } from '@material-ui/styles';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import * as serviceWorker from './serviceWorker';
+import { unregister } from './serviceWorker';
 
 import theme from './components/theme';
 
 import PortfolioMaster from './PortfolioMaster';
 import DefaultErrorBoundary from './DefaultErrorBoundary';
 // import Router from './components/router/Router';
+
+unregister();
 
 // NODE_ENV is available through webpack build process and which mode is set
 // Look for accessibility violations in rendered DOM
