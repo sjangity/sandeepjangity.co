@@ -14,6 +14,10 @@ _Shameless Plug_
 
 > [@sjangity](https://twitter.com/sjangity)
 
+### TODO
+
+> VPS shows the app build folder generates 300MB quickly leading to disk-space issues on an already constrained server resource. We should patch the build process with an initial hack of keeping the last 3 builds and truncating the rest.
+
 ### Sketch File
 
 > `/design/dropbox-sandeepjangity.co.0.0.1.sketch`
