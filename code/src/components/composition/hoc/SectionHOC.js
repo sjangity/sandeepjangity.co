@@ -7,10 +7,10 @@ import theme from '../../theme';
 
 const sectionStyles = {
   paper: {
-    padding: '3em 0 4.5em',
+    padding: '3em 0 3em',
     elevation: 0,
     textAlign: 'center',
-    textTransform: 'uppercase',
+    // textTransform: 'uppercase',
     '&:nth-child(even)': {
       backgroundColor: theme.palette.primary.main,
     },

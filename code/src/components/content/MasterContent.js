@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
 import {
+  Box,
   Container,
   Card,
   CardHeader,
@@ -21,61 +22,23 @@ import SectionHOC from '../composition/hoc/SectionHOC';
 import ImageHOC from '../composition/hoc/ImageHOC';
 import HeroSection from '../composition/standard/HeroSection';
 
-const ossProjects = [
-  {
-    title: 'sandeepjangity.co',
-    tech: 'React SPA',
-    description: [
-      'production-grade deploy',
-      'material-ui',
-      'styled-components',
-      'jss',
-    ],
-    buttonText: 'Code',
-    buttonVariant: 'outlined',
-    link: 'https://github.com/sjangity/sandeepjangity.co',
-  },
-  {
-    title: 'letseatsoftware.com',
-    tech: 'React SSG',
-    description: ['Headless CMS', 'GraphQL', 'MongoDB'],
-    buttonText: 'Code',
-    buttonVariant: 'outlined',
-    link: 'https://github.com/sjangity/letseatsoftware.com',
-  },
-  {
-    title: 'fastrouteapp.com',
-    tech: 'Native Swift Client',
-    description: [''],
-    buttonText: 'Code',
-    buttonVariant: 'outlined',
-    link: 'https://github.com/sjangity/fastrouteapp-ios',
-  },
-  {
-    title: 'peerflight.com',
-    tech: 'Native Obj-C Client',
-    description: ['Web-Mobile Integration'],
-    buttonText: 'Code',
-    buttonVariant: 'outlined',
-    link: 'https://github.com/sjangity/peerflight-ios',
-  },
-];
+import { ossProjects } from '../../data';
 
 const myThoughts = [
   {
     id: 'thought1',
     concept: 'On Performance',
-    description: 'Writing scalable Javascript on the Web',
+    description: 'Does FP Javascript scale better than OOP JS?',
   },
   {
     id: 'thought4',
     concept: 'On Standards',
-    description: 'Incremental improvement, requires consensus.',
+    description: 'Will Apple ever unlock full web push notifcation support?',
   },
   {
     id: 'thought3',
     concept: 'On Design Thinking',
-    description: 'What makes a Good Design, Good?',
+    description: 'What are the tell-tale signs of GOOD UI design?',
   },
 ];
 
@@ -124,6 +87,7 @@ const masterStyles = {
     margin: 16,
     display: 'flex',
     flexDirection: 'column',
+    textTransform: 'lowercase',
   },
   // listenMore: {
   //   marginBottom: '30px',
@@ -143,6 +107,33 @@ const masterStyles = {
       textDecoration: 'none',
     },
   },
+  ctaPrimary: {
+    background: theme.palette.secondary.main,
+    marginTop: 30,
+    borderRadius: 3,
+    lineHeight: 1.75,
+    padding: '16px',
+    border: 0,
+    color: theme.palette.secondary.contrastText,
+    height: 48,
+    '&:hover': {
+      textDecoration: 'none',
+      '@media (hover: none)': {
+        backgroundColor: 'transparent',
+      },
+      '&$disabled': {
+        backgroundColor: 'transparent',
+      },
+    },
+  },
+  pitchGridItemResume: {
+    // flexGrow: 3,
+    // width: '300px',
+    display: 'flex',
+    flexDirection: 'column',
+    // border: '1px solid blue',
+    alignItems: 'center',
+  },
 };
 
 class MasterContent extends React.Component {
@@ -157,13 +148,18 @@ class MasterContent extends React.Component {
           <Typography variant="h3">
             1 MILLION PAGE VIEWS, 50K ORGANIC REGISTRATIONS, ZERO PR-MARKETING
           </Typography>
-
+          <Typography variant="h4" style={{ margin: '30px 0' }}>
+            Innovation is correlated strongly with user empathy
+          </Typography>
           <Container>
             <Grid container style={{ alignItems: 'center' }}>
-              <Grid item xs={9}>
+              <Grid item xs={8}>
                 <ImageHOC src="/images/product-stats.png" />
+                <Typography variant="h6">
+                  traffic from one of my online web properties
+                </Typography>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={4}>
                 <Typography variant="h5" className={classes.listenMore}>
                   Traction is not the hardest part
                 </Typography>
@@ -177,21 +173,31 @@ class MasterContent extends React.Component {
                   }}
                 >
                   <Typography variant="h6">
-                    It is about learning to listen...
+                    It is about learning to listen to your users (continuously)
                   </Typography>
                 </Paper>
                 <Typography variant="h5">
                   Thats the secret to building great tech teams that can drive
-                  user value
+                  innovation
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Typography variant="h4">
                   Traffic graph from one of my online web properties
                 </Typography>
-              </Grid>
+              </Grid> */}
             </Grid>
           </Container>
+        </SectionHOC>
+        <SectionHOC>
+          <Typography variant="h3">so its been a heck of a ride</Typography>
+
+          <Typography variant="h4" style={{ marginTop: 30 }}>
+            after 11 years i&#39;ve become a better listener
+          </Typography>
+          <Typography variant="h5" style={{ marginTop: 30 }}>
+            a very simple principle to understand, but very hard to master
+          </Typography>
         </SectionHOC>
 
         {/* <SectionHOC>
@@ -240,25 +246,32 @@ class MasterContent extends React.Component {
         </SectionHOC> */}
 
         <SectionHOC>
-          <Typography variant="h3">
-            I LISTEN TO FEEDBACK BY WRITING OSS
+          <Typography variant="h3" style={{ marginBottom: 30 }}>
+            TODAY, I LISTEN TO FEEDBACK BY WRITING OSS
           </Typography>
-
+          <Box
+            className={classes.pitchGridItemResume}
+            justifyContent="flex-end"
+          >
+            <Link href="https://github.com/sjangity" target="_">
+              <ImageHOC src="/images/gh-icon.png" />
+            </Link>
+          </Box>
           <Grid container spacing={0} className={classes.ossGrid}>
             {ossProjects.map((tier) => (
               <Grid
-                key={tier.title}
+                key={tier.key}
                 item
                 xs={3}
                 component={Card}
                 className={classes.ossGridItem}
               >
                 <CardHeader
-                  title={tier.title}
+                  title={tier.key}
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  action={tier.key === 'Pro' ? <StarIcon /> : null}
                   className={classes.cardHeader}
                 />
                 <CardContent>
@@ -308,11 +321,24 @@ class MasterContent extends React.Component {
               ))}
 
               <Grid item xs={12}>
-                <Paper className={classes.pageFooter}>
+                {/* <Paper className={classes.pageFooter}>
                   <Typography gutterBottom variant="h5" component="h2">
                     On Automation
                   </Typography>
-                </Paper>
+                </Paper> */}
+                <Grid item>
+                  <Card className={classes.card}>
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        on automation
+                      </Typography>
+                      <Typography>
+                        how do you practice D-R-Y at all stages of product
+                        development?
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
               </Grid>
             </Grid>
           </Container>
@@ -320,7 +346,7 @@ class MasterContent extends React.Component {
 
         <SectionHOC>
           <Typography variant="h3" style={{ marginBottom: 50 }}>
-            In case you missed it.
+            I listen by applying empathy to code, design, and strategy
           </Typography>
 
           <Link
@@ -330,8 +356,8 @@ class MasterContent extends React.Component {
               root: classes.cta, // class name, e.g. `classes-nesting-root-x`
             }}
           >
-            Deeply empathesize with your users at all levels of the product
-            pipeline
+            because users dont care about technology, they care about moments
+            and experiences
           </Link>
         </SectionHOC>
       </div>
