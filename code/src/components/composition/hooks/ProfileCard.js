@@ -16,10 +16,12 @@ import {
   CardContent,
   IconButton,
   Zoom,
+  Typography,
   Link as MuiLink,
 } from '@material-ui/core';
 
 import PropTypes from 'prop-types';
+import { projectHighlights } from '../../../data';
 // import theme from '../../theme';
 
 import { LinkButton, CodeButton, StackButton } from '../../styled';
@@ -74,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
 const ProfileCard = (props) => {
   const classes = useStyles();
   const { project } = props;
+  const highlights = projectHighlights(project.key);
   // const isLiveLink = project.isLive ? 'LIVE' : 'GITHUB';
   const projectURL = project.isLive ? project.url : project.code;
 
@@ -91,7 +94,7 @@ const ProfileCard = (props) => {
             <Grid item xs={2}>
               <Avatar>{props.projectIndex}</Avatar>
             </Grid>
-            <Grid item xs={2} flexGrow={3}>
+            <Grid item xs={2}>
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,
@@ -129,21 +132,45 @@ const ProfileCard = (props) => {
                 <CardContent>
                   <Grid container>
                     <Grid item xs={3}>
-                      HIGHLIGHTS
+                      <Typography
+                        variant="h4"
+                        color="textSecondary"
+                        gutterBottom
+                      >
+                        HIGHLIGHTS
+                      </Typography>
                     </Grid>
                     <Grid item xs={3}>
-                      BUILD
+                      <Typography
+                        variant="h4"
+                        color="textSecondary"
+                        gutterBottom
+                      >
+                        BUILD
+                      </Typography>
                     </Grid>
                     <Grid item xs={3}>
-                      TEST
+                      <Typography
+                        variant="h4"
+                        color="textSecondary"
+                        gutterBottom
+                      >
+                        TEST
+                      </Typography>
                     </Grid>
                     <Grid item xs={3}>
-                      DEPLOY
+                      <Typography
+                        variant="h4"
+                        color="textSecondary"
+                        gutterBottom
+                      >
+                        DEPLOY
+                      </Typography>
                     </Grid>
 
                     <Grid item xs={3}>
                       <div className={classes.projectIcons}>
-                        {project.highlights.map((highlight, index) => (
+                        {highlights.map((highlight, index) => (
                           <div key={index}>{highlight}</div>
                         ))}
                       </div>

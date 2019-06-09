@@ -2,7 +2,7 @@ export const ossProjects = [
   {
     key: 'sandeepjangity.co',
     tech: 'React SPA',
-    description: [
+    highlights: [
       'production-grade deploy',
       'material-ui',
       'styled-components',
@@ -15,7 +15,7 @@ export const ossProjects = [
   {
     key: 'letseatsoftware.com',
     tech: 'React SSG',
-    description: ['Headless CMS', 'GraphQL', 'MongoDB'],
+    highlights: ['Headless CMS', 'GraphQL', 'MongoDB'],
     buttonText: 'Code',
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/letseatsoftware.com',
@@ -23,7 +23,7 @@ export const ossProjects = [
   {
     key: 'fastrouteapp.com',
     tech: 'iOS Swift',
-    description: ['Objective-C to Swift Migration'],
+    highlights: ['Objective-C to Swift Migration'],
     buttonText: 'Code',
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/fastrouteapp-ios',
@@ -51,7 +51,8 @@ export const projects = [
     isLive: 1,
     isOpenDefault: 1,
     code: 'https://github.com/sjangity/sandeepjangity.co',
-    objective: 'AMP / React Componetns / Custom JS',
+    objective:
+      'Non-CRA, production-grade (strict, a11y, webpack, etc.,) personal portfolio webapp as a React SPA deployed on a CentOS/Virtual Private Server.',
     title: 'React SPA',
     highlights: ['test2'],
     architecture: stockReactArch,
@@ -62,8 +63,9 @@ export const projects = [
     url: 'https://letseatsoftware.com',
     isLive: 0,
     isOpenDefault: 0,
-    code: 'https://github.com/sjangity/sandeepjangity.co',
-    objective: 'AMP / React Componetns / Custom JS',
+    code: 'https://github.com/sjangity/letseatsoftware.com',
+    objective:
+      'CRA-based, production-grade personal blog on React SSG, headless CMS, GraphQL and MongoDB tech.',
     title: 'React SSG, GraphQL Blog',
     highlights: ['test2'],
     architecture: stockReactArch,
@@ -75,7 +77,8 @@ export const projects = [
     isLive: 1,
     isOpenDefault: 0,
     code: 'https://github.com/sjangity/sandeepjangity.co',
-    objective: 'AMP / React Componetns / Custom JS',
+    objective:
+      'App store approved iOS + Swift mobile client for fastrouteapp.com',
     title: 'iOS Swift Native Client',
     highlights: ['test2'],
     architecture: {
@@ -92,15 +95,22 @@ export const projects = [
     isLive: 1,
     isOpenDefault: 0,
     code: 'https://github.com/sjangity/sandeepjangity.co',
-    objective: 'AMP / React Componetns / Custom JS',
+    objective:
+      'App store approved iOS + Objective-C mobile client for peerflight with backend running on LAMP-stack & VPS',
     title: 'ios Objective-C Native Client with Full-Web UI Integration',
     highlights: ['test2'],
     architecture: {
       ...stockReactArch,
-      build: ['lamp', 'swift'],
+      build: ['lamp', 'objc'],
       test: [],
     },
 
     stack: ['react', ''],
   },
 ];
+
+export const projectHighlights = (key) => {
+  return ossProjects
+    .filter((project) => project.key === key)
+    .map((project) => project.highlights);
+};

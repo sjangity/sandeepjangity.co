@@ -149,7 +149,7 @@ class MasterContent extends React.Component {
             1 MILLION PAGE VIEWS, 50K ORGANIC REGISTRATIONS, ZERO PR-MARKETING
           </Typography>
           <Typography variant="h4" style={{ margin: '30px 0' }}>
-            Innovation is correlated strongly with user empathy
+            innovation is correlated strongly with user empathy
           </Typography>
           <Container>
             <Grid container style={{ alignItems: 'center' }}>
@@ -161,7 +161,7 @@ class MasterContent extends React.Component {
               </Grid>
               <Grid item xs={4}>
                 <Typography variant="h5" className={classes.listenMore}>
-                  Traction is not the hardest part
+                  traction is not the hardest part
                 </Typography>
 
                 <Paper
@@ -190,7 +190,7 @@ class MasterContent extends React.Component {
           </Container>
         </SectionHOC>
         <SectionHOC>
-          <Typography variant="h3">so its been a heck of a ride</Typography>
+          <Typography variant="h3">SO ITS BEEN A HECK OF A RIDE</Typography>
 
           <Typography variant="h4" style={{ marginTop: 30 }}>
             after 11 years i&#39;ve become a better listener
@@ -258,33 +258,33 @@ class MasterContent extends React.Component {
             </Link>
           </Box>
           <Grid container spacing={0} className={classes.ossGrid}>
-            {ossProjects.map((tier) => (
+            {ossProjects.map((project) => (
               <Grid
-                key={tier.key}
+                key={project.key}
                 item
                 xs={3}
                 component={Card}
                 className={classes.ossGridItem}
               >
                 <CardHeader
-                  title={tier.key}
-                  subheader={tier.subheader}
+                  title={project.key}
+                  subheader={project.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.key === 'Pro' ? <StarIcon /> : null}
+                  action={project.key === 'Pro' ? <StarIcon /> : null}
                   className={classes.cardHeader}
                 />
                 <CardContent>
                   <div className={classes.cardPricing}>
                     <Typography component="h2" variant="h3" color="textPrimary">
-                      {tier.tech}
+                      {project.tech}
                     </Typography>
                     <Typography variant="h6" color="textSecondary">
                       Highlights
                     </Typography>
                   </div>
                   <ul>
-                    {tier.description.map((line) => (
+                    {project.highlights.map((line) => (
                       <Typography
                         component="li"
                         variant="subtitle1"
