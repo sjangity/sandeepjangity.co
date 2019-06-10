@@ -40,6 +40,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       // provide a template that will be used to create the public/index.html file
       template: './src/index.html',
+      favicon: 'favicon.ico',
     }),
     new CopyPlugin([
       {
