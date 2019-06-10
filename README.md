@@ -14,6 +14,9 @@ _Shameless Plug_
 
 > [@sjangity](https://twitter.com/sjangity)
 
+### Deploy Script
+> [Compile/Build](https://github.com/sjangity/startup-stack/blob/master/pull-static.sh) Used to deploy React SPA onto VPS.
+
 ### TOP ISSUES (outstanding)
 
 > [#1](https://github.com/sjangity/sandeepjangity.co/issues/1) VPS shows the app build folder generates 300MB quickly leading to disk-space issues on an already constrained server resource. We should patch the build process with an initial hack of keeping the last 3 builds and truncating the rest.
@@ -22,7 +25,7 @@ _Shameless Plug_
 
 > `/design/dropbox-sandeepjangity.co.0.0.1.sketch`
 
-### Flow Overview
+### Flow Overview (outdated, but general mockup)
 
 > ![Sketch](/design/flow.png)
 
