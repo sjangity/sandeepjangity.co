@@ -188,7 +188,7 @@ class DetailContent extends Component {
                 <div className={classes.pitchGridItem}>
                   <Button
                     variant="contained"
-                    href="https://www.dropbox.com/s/vveohisfofnjuca/Sandeep-Jangity-Resume.pdf?dl=1"
+                    href="http://bit.ly/sandeep-jangity-resume-latest"
                     className={classes.cta}
                   >
                     Download Resume
