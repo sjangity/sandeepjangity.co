@@ -39,7 +39,7 @@ export const ossProjects = [
 ];
 
 const stockReactArch = {
-  build: ['es6', 'react', 'materialui', 'sketchapp', 'styledcomp', 'webpack'],
+  build: ['materialui', 'sketchapp', 'es6', 'styledcomp', 'react', 'webpack'],
   test: ['jest-enzyme'],
   deploy: ['nginx', 'linode'],
 };
@@ -111,6 +111,7 @@ export const projects = [
 
 export const projectHighlights = (key) => {
   return ossProjects
-    .filter((project) => project.key === key)
-    .map((project) => project.highlights);
+    .filter((pj) => pj.key === key)
+    .map((item) => item.highlights)
+    .reduce((acc, arr) => acc.concat.apply([], arr), []);
 };

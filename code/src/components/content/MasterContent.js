@@ -21,7 +21,6 @@ import theme from '../theme';
 import SectionHOC from '../composition/hoc/SectionHOC';
 import ImageHOC from '../composition/hoc/ImageHOC';
 import HeroSection from '../composition/standard/HeroSection';
-
 import { ossProjects } from '../../data';
 
 const myThoughts = [
@@ -109,13 +108,13 @@ const masterStyles = {
   },
   ctaPrimary: {
     background: theme.palette.secondary.main,
-    marginTop: 30,
+    display: 'block',
     borderRadius: 3,
-    lineHeight: 1.75,
-    padding: '16px',
+    fontSize: '1.5em',
+    padding: '36px',
     border: 0,
     color: theme.palette.secondary.contrastText,
-    height: 48,
+    // height: 48,
     '&:hover': {
       textDecoration: 'none',
       '@media (hover: none)': {
@@ -133,6 +132,9 @@ const masterStyles = {
     flexDirection: 'column',
     // border: '1px solid blue',
     alignItems: 'center',
+  },
+  highlight: {
+    color: theme.palette.secondary.main,
   },
 };
 
@@ -153,13 +155,13 @@ class MasterContent extends React.Component {
           </Typography>
           <Container>
             <Grid container style={{ alignItems: 'center' }}>
-              <Grid item xs={8}>
+              <Grid item xs={10}>
                 <ImageHOC src="/images/product-stats.png" />
                 <Typography variant="h6">
-                  traffic from one of my online web properties
+                  traffic drop from one of my online web properties
                 </Typography>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={2}>
                 <Typography variant="h5" className={classes.listenMore}>
                   traction is not the hardest part
                 </Typography>
@@ -173,7 +175,8 @@ class MasterContent extends React.Component {
                   }}
                 >
                   <Typography variant="h6">
-                    It is about learning to listen to your users (continuously)
+                    The hard part is learning to listen to your users
+                    (continuously)
                   </Typography>
                 </Paper>
                 <Typography variant="h5">
@@ -190,10 +193,12 @@ class MasterContent extends React.Component {
           </Container>
         </SectionHOC>
         <SectionHOC>
-          <Typography variant="h3">SO ITS BEEN A HECK OF A RIDE</Typography>
+          <Typography variant="h3">
+            WHAT DOES 11 YEARS in STARTUPS TEACH YOU?
+          </Typography>
 
           <Typography variant="h4" style={{ marginTop: 30 }}>
-            after 11 years i&#39;ve become a better listener
+            listening is not passive, but an active process
           </Typography>
           <Typography variant="h5" style={{ marginTop: 30 }}>
             a very simple principle to understand, but very hard to master
@@ -247,7 +252,8 @@ class MasterContent extends React.Component {
 
         <SectionHOC>
           <Typography variant="h3" style={{ marginBottom: 30 }}>
-            TODAY, I LISTEN TO FEEDBACK BY WRITING OSS
+            TODAY, <span className={classes.highlight}>I LISTEN</span> TO
+            FEEDBACK BY WRITING OSS
           </Typography>
           <Box
             className={classes.pitchGridItemResume}
@@ -303,7 +309,8 @@ class MasterContent extends React.Component {
 
         <SectionHOC>
           <Typography variant="h3">
-            I listen by asking deeper questions
+            <span className={classes.highlight}>I LISTEN</span> by asking deeper
+            questions
           </Typography>
           <Container className={classes.cardGrid}>
             <Grid container spacing={4}>
@@ -345,19 +352,21 @@ class MasterContent extends React.Component {
         </SectionHOC>
 
         <SectionHOC>
-          <Typography variant="h3" style={{ marginBottom: 50 }}>
-            I listen by applying empathy to code, design, and strategy
+          <Typography variant="h3">
+            <span className={classes.highlight}>I LISTEN</span> by applying
+            empathy in design and code
           </Typography>
-
+          <Typography variant="h4" style={{ marginBottom: 50, marginTop: 30 }}>
+            because users dont care about technology
+          </Typography>
           <Link
             to="/portfolio"
             component={RouterLink}
             classes={{
-              root: classes.cta, // class name, e.g. `classes-nesting-root-x`
+              root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
             }}
           >
-            because users dont care about technology, they care about moments
-            and experiences
+            they care about moments and experiences
           </Link>
         </SectionHOC>
       </div>

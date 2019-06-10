@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ProfileCard from './ProfileCard';
-import theme from '../../theme';
 
 import { projects } from '../../../data';
 
@@ -12,10 +11,10 @@ const profileListStyles = {
     display: 'flex',
     flexDirection: 'column',
     // flexWrap: 'wrap',
-    // border: '10px solid green',
-    '&:nth-child(even)': {
-      backgroundColor: theme.palette.primary.main,
-    },
+    // '&:nth-child(even)': {
+    //   // border: '10px solid green',
+    //   backgroundColor: theme.palette.secondary.main,
+    // },
   },
 };
 

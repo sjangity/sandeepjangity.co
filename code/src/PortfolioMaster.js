@@ -6,6 +6,7 @@ import { MasterContent, DetailContent } from './components/content';
 import ScrollToTopOnMount from './components/ScrollToTopMount';
 
 // import './PortfolioMaster.css';
+
 class PortfolioMaster extends Component {
   // eslint-disable-next-line class-methods-use-this
   render() {

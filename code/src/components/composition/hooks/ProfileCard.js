@@ -21,10 +21,11 @@ import {
 } from '@material-ui/core';
 
 import PropTypes from 'prop-types';
+import ImageHOC from '../hoc/ImageHOC';
 import { projectHighlights } from '../../../data';
 // import theme from '../../theme';
 
-import { LinkButton, CodeButton, StackButton } from '../../styled';
+import { LinkButton, StackButton } from '../../styled';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,16 +38,10 @@ const useStyles = makeStyles((theme) => ({
     // display: 'flex',
   },
   card: {
-    // maxWidth: 500,
-    // maxWidth: '100%',
     width: 250,
     marginTop: 10,
     aligItems: 'center',
     justifyContent: 'center',
-  },
-  media: {
-    // height: 0,
-    // paddingTop: '56.25%', // 16:9
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -68,9 +63,6 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: theme.palette.secondary.main,
   },
-  // projectURL: {
-  //   width: '100%',
-  // },
 }));
 
 const ProfileCard = (props) => {
@@ -92,9 +84,6 @@ const ProfileCard = (props) => {
         <div>
           <Grid container alignItems="center">
             <Grid item xs={2}>
-              <Avatar>{props.projectIndex}</Avatar>
-            </Grid>
-            <Grid item xs={2}>
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,
@@ -106,10 +95,21 @@ const ProfileCard = (props) => {
                 <StackButton>V</StackButton>
               </IconButton>
             </Grid>
-            <Grid item xs={6} style={{ textAlign: 'left' }}>
-              <MuiLink href={project.code} target="_blank">
-                <CodeButton>code</CodeButton>
+            <Grid item xs={1} style={{ textAlign: 'right' }}>
+              <Avatar>{props.projectIndex}</Avatar>
+            </Grid>
+            <Grid item xs={1} style={{ textAlign: 'left' }}>
+              <MuiLink href={project.code} target="_">
+                <ImageHOC src="/images/gh-icon.png" style={{ margin: 0 }} />
               </MuiLink>
+            </Grid>
+            <Grid item xs={8} style={{ textAlign: 'left' }}>
+              <Typography variant="h5" style={{ textTransform: 'lowercase' }}>
+                {project.objective}
+              </Typography>
+            </Grid>
+            <Grid item xs={4} />
+            <Grid item xs={8} style={{ textAlign: 'left' }}>
               <MuiLink
                 className={classes.projectURL}
                 href={project.code}
@@ -118,9 +118,7 @@ const ProfileCard = (props) => {
                 <LinkButton>{projectURL}</LinkButton>
               </MuiLink>
             </Grid>
-            <Grid item xs={2}>
-              {project.objective}
-            </Grid>
+
             <Grid item xs={12}>
               <Zoom in={expanded} unmountOnExit>
                 {/* <svg className={classes.svg}>
@@ -171,17 +169,15 @@ const ProfileCard = (props) => {
                     <Grid item xs={3}>
                       <div className={classes.projectIcons}>
                         {highlights.map((highlight, index) => (
-                          <div key={index}>{highlight}</div>
+                          <p key={index}>{highlight}</p>
                         ))}
                       </div>
                     </Grid>
                     <Grid item xs={3}>
                       <div className={classes.projectIcons}>
                         {project.architecture.build.map((tech, index) => (
-                          // <div key={index}>{tech}</div>
                           <img
                             key={index}
-                            // className={classes.img}
                             alt="complex"
                             src={`/images/tech/${tech}.png`}
                           />
@@ -193,7 +189,6 @@ const ProfileCard = (props) => {
                         {project.architecture.test.map((tech, index) => (
                           <img
                             key={index}
-                            // className={classes.img}
                             alt="complex"
                             src={`/images/tech/${tech}.png`}
                           />
@@ -205,7 +200,6 @@ const ProfileCard = (props) => {
                         {project.architecture.deploy.map((tech, index) => (
                           <img
                             key={index}
-                            // className={classes.img}
                             alt="complex"
                             src={`/images/tech/${tech}.png`}
                           />
@@ -222,79 +216,6 @@ const ProfileCard = (props) => {
     </React.Fragment>
   );
 };
-
-// const ProfileCard = (props) => {
-//   const classes = useStyles();
-//   const { project } = props;
-//   const isLiveLink = project.isLive ? 'LIVE' : 'GITHUB';
-//   const projectURL = project.isLive ? project.url : project.code;
-
-//   // hooks
-//   const [expanded, setExpanded] = React.useState(false);
-//   function handleExpandClick() {
-//     setExpanded(!expanded);
-//   }
-
-//   return (
-//     <React.Fragment>
-//       <Grid container justify="center">
-//         <Card className={classes.card}>
-//           <CardHeader
-//             title={
-//               <MuiLink href={projectURL} target="_blank">
-//                 {isLiveLink}
-//               </MuiLink>
-//             }
-//             subheader={projectURL}
-//           />
-//           <CardContent>
-//             <Typography variant="h5" color="textSecondary" component="p">
-//               {project.title}
-//             </Typography>
-//           </CardContent>
-//           <CardActions disableSpacing>
-//             <MuiLink href={project.code} target="_blank">
-//               <CodeButton>code</CodeButton>
-//             </MuiLink>
-//             {/* <IconButton aria-label="Add to favorites">
-//               <FavoriteIcon />
-//             </IconButton>
-//             <IconButton aria-label="Share">
-//               <ShareIcon />
-//             </IconButton> */}
-//             {/* <IconButton
-//               className={clsx(classes.expand, {
-//                 [classes.expandOpen]: expanded,
-//               })}
-//               onClick={handleExpandClick}
-//               aria-expanded={expanded}
-//               aria-label="Show more"
-//             >
-//               <ExpandMoreIcon />
-//             </IconButton> */}
-//             <StackButton
-//               className={clsx(classes.expand, {
-//                 [classes.expandOpen]: expanded,
-//               })}
-//               onClick={handleExpandClick}
-//             >
-//               stack
-//             </StackButton>
-//           </CardActions>
-//           <Collapse in={expanded} timeout="auto" unmountOnExit>
-//             <CardContent>
-//               <div className={classes.expandedProject}>
-//                 {project.highlights.map((highlight, index) => (
-//                   <div key={index}>{highlight}</div>
-//                 ))}
-//               </div>
-//             </CardContent>
-//           </Collapse>
-//         </Card>
-//       </Grid>
-//     </React.Fragment>
-//   );
-// };
 
 ProfileCard.propTypes = {
   project: PropTypes.object.isRequired,

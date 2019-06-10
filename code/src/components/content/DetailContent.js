@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, Grid, Link as MuiLink } from '@material-ui/core';
+import {
+  Button,
+  Grid,
+  Link as MuiLink,
+  // useMediaQuery,
+} from '@material-ui/core';
 
 import Box from '@material-ui/core/Box';
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
+import MediaQuery from 'react-responsive';
 import ImageHOC from '../composition/hoc/ImageHOC';
 import theme from '../theme';
 import SectionHOC from '../composition/hoc/SectionHOC';
@@ -22,10 +28,12 @@ const detailStyles = {
   },
   containerThink: {
     display: 'flex',
-    height: '250px',
+    // height: '250px',
     textAlign: 'center',
+    flexWrap: 'wrap',
     '& > .box': {
       flex: 1,
+      flexBasis: '200px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -43,10 +51,16 @@ const detailStyles = {
     '& .boxDesign': {
       background: '#F6A623',
     },
+    '& .boxTech': {
+      // textAlign: 'right',
+      width: 800,
+      // border: '10px solid green',
+    },
   },
   pitchGrid: {
     display: 'flex',
     alignItems: 'center',
+    margin: '50px 0',
     '& > *': {
       flexGrow: 1,
     },
@@ -97,10 +111,6 @@ const detailStyles = {
       'rotate(-45deg) translate(-102px, 22px)' /* Firefox 16+, Opera 12.50+ */,
     background: theme.palette.primary.main,
   },
-  projectGridRoot: {
-    textAlign: 'center',
-    backgroundColor: theme.palette.primary.main,
-  },
   projectGrid: {
     display: 'flex',
     height: 80,
@@ -132,69 +142,63 @@ class DetailContent extends Component {
                 with deep empathy for users
               </Typography>
               <Typography variant="h4" color="textSecondary" gutterBottom>
-                and growth-based products
+                and growth-driven products
               </Typography>
-              <SectionHOC>
-                <div className={classes.pitchGrid}>
-                  <Link
-                    to="/"
-                    component={RouterLink}
-                    classes={{
-                      root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
-                    }}
+              <div className={classes.pitchGrid}>
+                <Link
+                  to="/"
+                  component={RouterLink}
+                  classes={{
+                    root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
+                  }}
+                >
+                  Home
+                </Link>
+                <Box
+                  className={classes.pitchGridItemResume}
+                  justifyContent="flex-end"
+                >
+                  <MuiLink href="/">
+                    <ImageHOC src="/images/profile2.png" />
+                  </MuiLink>
+                  <Typography variant="h4" color="textSecondary" component="p">
+                    Sandeep Jangity
+                  </Typography>
+                </Box>
+
+                <div className={classes.pitchGridItem}>
+                  <MuiLink href="https://github.com/sjangity" target="_">
+                    <ImageHOC src="/images/gh-icon.png" />
+                  </MuiLink>
+
+                  <MuiLink
+                    href="https://stackoverflow.com/users/story/11091758"
+                    target="_"
                   >
-                    Home
-                  </Link>
-                  <Box
-                    className={classes.pitchGridItemResume}
-                    justifyContent="flex-end"
+                    <ImageHOC src="/images/so-icon.png" />
+                  </MuiLink>
+                  <MuiLink
+                    href={'https://www.linkedin.com/in/sjangity/'}
+                    target="_"
                   >
-                    <MuiLink href="/">
-                      <ImageHOC src="/images/profile2.png" />
-                    </MuiLink>
-                    <Typography
-                      variant="h4"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Sandeep Jangity
-                    </Typography>
-                  </Box>
-
-                  <div className={classes.pitchGridItem}>
-                    <MuiLink href="https://github.com/sjangity" target="_">
-                      <ImageHOC src="/images/gh-icon.png" />
-                    </MuiLink>
-
-                    <MuiLink
-                      href="https://stackoverflow.com/users/story/11091758"
-                      target="_"
-                    >
-                      <ImageHOC src="/images/so-icon.png" />
-                    </MuiLink>
-                    <MuiLink
-                      href={'https://www.linkedin.com/in/sjangity/'}
-                      target="_"
-                    >
-                      <ImageHOC src="/images/li-icon.png" />
-                    </MuiLink>
-                  </div>
-
-                  <div className={classes.pitchGridItem}>
-                    <Button
-                      variant="contained"
-                      href="https://www.dropbox.com/s/vveohisfofnjuca/Sandeep-Jangity-Resume.pdf?dl=1"
-                      className={classes.cta}
-                    >
-                      Download Resume
-                    </Button>
-                  </div>
+                    <ImageHOC src="/images/li-icon.png" />
+                  </MuiLink>
                 </div>
-              </SectionHOC>
+
+                <div className={classes.pitchGridItem}>
+                  <Button
+                    variant="contained"
+                    href="https://www.dropbox.com/s/vveohisfofnjuca/Sandeep-Jangity-Resume.pdf?dl=1"
+                    className={classes.cta}
+                  >
+                    Download Resume
+                  </Button>
+                </div>
+              </div>
             </Grid>
           </Grid>
         </div>
-        <SectionHOC>
+        <SectionHOC isGray={1}>
           <div className={classes.containerThink}>
             <div className="box boxThinking">
               <Typography variant="h4">
@@ -217,20 +221,19 @@ class DetailContent extends Component {
                 <Typography variant="h5">timeless design</Typography>
               </div>
             </div>
+            <MediaQuery minDeviceWidth={1000}>
+              <div className="box boxTech">
+                <ImageHOC src="/images/stacks.png" />
+              </div>
+            </MediaQuery>
           </div>
         </SectionHOC>
 
         <SectionHOC>
-          <div className="box boxTech">
-            <ImageHOC src="/images/stacks.png" />
-          </div>
+          <Typography variant="h4">PROJECTS (CODE)</Typography>
         </SectionHOC>
 
-        <SectionHOC className={classes.projectGridRoot}>
-          <Typography variant="h3">PROJECTS (CODE)</Typography>
-        </SectionHOC>
-
-        <SectionHOC>
+        <SectionHOC isGray={1}>
           {/* card list */}
           <ProfileCardList />
         </SectionHOC>

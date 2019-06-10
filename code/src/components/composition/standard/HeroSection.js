@@ -6,6 +6,7 @@ import { Container, Grid, ButtonBase } from '@material-ui/core';
 
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
+// import { HashLink as AnchorLink } from 'react-router-hash-link';
 import theme from '../../theme';
 
 const heroStyles = makeStyles({
@@ -30,7 +31,7 @@ const heroStyles = makeStyles({
     padding: '36px',
     border: 0,
     color: theme.palette.secondary.contrastText,
-    height: 48,
+    // height: 48,
     '&:hover': {
       textDecoration: 'none',
       '@media (hover: none)': {
@@ -50,15 +51,16 @@ const heroStyles = makeStyles({
     border: 0,
     color: theme.palette.secondary.contrastText,
     height: 48,
-    '&:hover': {
-      textDecoration: 'none',
-      '@media (hover: none)': {
-        backgroundColor: 'transparent',
-      },
-      '&$disabled': {
-        backgroundColor: 'transparent',
-      },
-    },
+    textDecoration: 'none',
+    // '&:hover': {
+    //   textDecoration: 'none',
+    //   '@media (hover: none)': {
+    //     backgroundColor: 'transparent',
+    //   },
+    //   '&$disabled': {
+    //     backgroundColor: 'transparent',
+    //   },
+    // },
   },
   portLink: {
     padding: '1em 0',
@@ -106,11 +108,11 @@ export default function HeroSection() {
               component="p"
               style={{ textTransform: 'uppercase', margin: 30 }}
             >
-              AFTER 1 IPO and Many failures
+              I build operational effeciency as an engineer
             </Typography>
-            <Container maxWidth="md" style={{ marginTop: 80 }}>
-              <Grid container justifyContent="center" alignItems="center">
-                <Grid item xs={8}>
+            <Container>
+              <Grid container alignItems="center">
+                <Grid item xs={6}>
                   <ButtonBase className={classes.image}>
                     <img
                       className={classes.img}
@@ -121,12 +123,13 @@ export default function HeroSection() {
                   <Typography
                     variant="h4"
                     color="textSecondary"
-                    style={{ textTransform: 'uppercase', margin: 30 }}
+                    style={{ textTransform: 'uppercase', marginTop: '30px' }}
                   >
-                    11 years AS A FULL STACK WEB-MOBILE ENGINEER / PRODUCT GUY
+                    11 years in startups AS A FULL STACK WEB-MOBILE ENGINEER /
+                    PRODUCT GUY
                   </Typography>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6}>
                   <Link
                     to="/portfolio"
                     component={RouterLink}
@@ -135,7 +138,7 @@ export default function HeroSection() {
                     }}
                   >
                     Let&#39;s innovate together
-                  </Link>{' '}
+                  </Link>
                 </Grid>
               </Grid>
             </Container>
@@ -149,6 +152,16 @@ export default function HeroSection() {
           >
             Portfolio
           </Link>
+          {/* <AnchorLink
+            smooth
+            to="/portfolio#projects"
+            component={RouterLink}
+            classes={{
+              root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
+            }}
+          >
+            Portfolio
+          </AnchorLink> */}
         </Grid>
       </Grid>
     </div>
