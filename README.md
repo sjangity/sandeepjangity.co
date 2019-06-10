@@ -8,7 +8,7 @@ A standard master-detail interface fairly conventional in the native mobile worl
 
 _Shameless Plug_
 
-> [Resume](https://www.dropbox.com/s/vveohisfofnjuca/Sandeep-Jangity-Resume.pdf?dl=1)
+> [Resume](http://bit.ly/sandeep-jangity-resume-latest)
 
 > [LinkedIn](https://www.linkedin.com/in/sjangity/)
 
