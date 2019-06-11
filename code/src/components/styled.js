@@ -6,7 +6,6 @@ export const LinkButton = styled.button`
   color: ${theme.palette.primary.contrastText};
 
   font-size: 1em;
-  padding: 1em;
   border-radius: 3px;
 `;
 

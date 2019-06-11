@@ -155,13 +155,13 @@ class MasterContent extends React.Component {
           </Typography>
           <Container>
             <Grid container style={{ alignItems: 'center' }}>
-              <Grid item xs={10}>
+              <Grid item xs={12} sm={10}>
                 <ImageHOC src="/images/product-stats.png" />
                 <Typography variant="h6">
                   traffic drop from one of my online web properties
                 </Typography>
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={12} sm={2}>
                 <Typography variant="h5" className={classes.listenMore}>
                   traction is not the hardest part
                 </Typography>
@@ -268,7 +268,8 @@ class MasterContent extends React.Component {
               <Grid
                 key={project.key}
                 item
-                xs={3}
+                xs={12}
+                sm={3}
                 component={Card}
                 className={classes.ossGridItem}
               >
@@ -315,7 +316,7 @@ class MasterContent extends React.Component {
           <Container className={classes.cardGrid}>
             <Grid container spacing={4}>
               {myThoughts.map((thought) => (
-                <Grid item key={thought.id} xs={12 / myThoughts.length}>
+                <Grid item key={thought.id} xs={12} sm={12 / myThoughts.length}>
                   <Card className={classes.card}>
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">

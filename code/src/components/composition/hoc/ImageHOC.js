@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 const imageStyles = {
   root: {
     margin: '20px',
-    display: 'block',
+    display: 'inline-block',
     maxWidth: 'calc(100% - 40px)',
     maxHeight: '100%',
   },

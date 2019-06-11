@@ -24,7 +24,7 @@ const detailStyles = {
     textAlign: 'center',
     textTransform: 'uppercase',
     margin: '30px 0',
-    height: '75vh',
+    // height: '75vh',
   },
   containerThink: {
     display: 'flex',
@@ -33,7 +33,12 @@ const detailStyles = {
     flexWrap: 'wrap',
     '& > .box': {
       flex: 1,
-      flexBasis: '200px',
+      [theme.breakpoints.up('sm')]: {
+        flexBasis: '200px',
+      },
+      [theme.breakpoints.down('sm')]: {
+        flexBasis: '150px',
+      },
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -41,6 +46,7 @@ const detailStyles = {
     '& .boxThinking': {
       background: theme.palette.primary.main,
       flexGrow: 3,
+      maxWidth: '100%',
     },
     '& .boxModern': {
       background: theme.palette.secondary.main,
@@ -78,13 +84,13 @@ const detailStyles = {
   cta: {
     background: theme.palette.secondary.main,
     borderRadius: 3,
-    width: 500,
+    // width: 500,
     fontSize: '1.5em',
     lineHeight: 1.75,
     padding: '36px',
     border: 0,
     color: theme.palette.secondary.contrastText,
-    height: 48,
+    // height: 48,
     '&:hover': {
       textDecoration: 'none',
       '@media (hover: none)': {
@@ -127,81 +133,78 @@ class DetailContent extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <div className={classes.hero}>
-          <Grid
-            container
-            justify="space-around"
-            alignItems="center"
-            spacing={3}
-          >
+        <SectionHOC isGray={1}>
+          <Grid container alignItems="center" spacing={0}>
             <Grid item xs={12} style={{ marginTop: 120 }}>
               <Typography variant="h2" gutterBottom>
                 I BUILD FRONTEND AND BACKEND SYSTEMS
               </Typography>
+            </Grid>
+            <Grid item xs={12}>
               <Typography variant="h3" color="textSecondary" gutterBottom>
                 with deep empathy for users
               </Typography>
+            </Grid>
+            <Grid item xs={12}>
               <Typography variant="h4" color="textSecondary" gutterBottom>
                 and growth-driven products
               </Typography>
-              <div className={classes.pitchGrid}>
-                <Link
-                  to="/"
-                  component={RouterLink}
-                  classes={{
-                    root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
-                  }}
-                >
-                  Home
-                </Link>
-                <Box
-                  className={classes.pitchGridItemResume}
-                  justifyContent="flex-end"
-                >
-                  <MuiLink href="/">
-                    <ImageHOC src="/images/profile2.png" />
-                  </MuiLink>
-                  <Typography variant="h4" color="textSecondary" component="p">
-                    Sandeep Jangity
-                  </Typography>
-                </Box>
-
-                <div className={classes.pitchGridItem}>
-                  <MuiLink href="https://github.com/sjangity" target="_">
-                    <ImageHOC src="/images/gh-icon.png" />
-                  </MuiLink>
-
-                  <MuiLink
-                    href="https://stackoverflow.com/users/story/11091758"
-                    target="_"
-                  >
-                    <ImageHOC src="/images/so-icon.png" />
-                  </MuiLink>
-                  <MuiLink
-                    href={'https://www.linkedin.com/in/sjangity/'}
-                    target="_"
-                  >
-                    <ImageHOC src="/images/li-icon.png" />
-                  </MuiLink>
-                </div>
-
-                <div className={classes.pitchGridItem}>
-                  <Button
-                    variant="contained"
-                    href="http://bit.ly/sandeep-jangity-resume-latest"
-                    className={classes.cta}
-                  >
-                    Download Resume
-                  </Button>
-                </div>
-              </div>
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <Link
+                to="/"
+                component={RouterLink}
+                classes={{
+                  root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
+                }}
+              >
+                Home
+              </Link>
+              <Box>
+                <MuiLink href="/">
+                  <ImageHOC src="/images/profile2.png" />
+                </MuiLink>
+                <Typography variant="h4" color="textSecondary" component="p">
+                  Sandeep Jangity
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={4} sm={3}>
+              <MuiLink href="https://github.com/sjangity" target="_">
+                <ImageHOC src="/images/gh-icon.png" />
+              </MuiLink>
+            </Grid>
+            <Grid item xs={4} sm={3}>
+              <MuiLink
+                href="https://stackoverflow.com/users/story/11091758"
+                target="_"
+              >
+                <ImageHOC src="/images/so-icon.png" />
+              </MuiLink>
+            </Grid>
+            <Grid item xs={4} sm={3}>
+              <MuiLink
+                href={'https://www.linkedin.com/in/sjangity/'}
+                target="_"
+              >
+                <ImageHOC src="/images/li-icon.png" />
+              </MuiLink>
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                variant="contained"
+                href="http://bit.ly/sandeep-jangity-resume-latest"
+                className={classes.cta}
+              >
+                Download Resume
+              </Button>
             </Grid>
           </Grid>
-        </div>
+        </SectionHOC>
         <SectionHOC isGray={1}>
           <div className={classes.containerThink}>
             <div className="box boxThinking">
-              <Typography variant="h4">
+              <Typography variant="h5">
                 This is what I am thinking of these days
               </Typography>
               <img alt="test" src="/images/brain-icon.png" />

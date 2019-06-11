@@ -8,6 +8,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 // import { HashLink as AnchorLink } from 'react-router-hash-link';
 import theme from '../../theme';
+import SectionHOC from '../hoc/SectionHOC';
 
 const heroStyles = makeStyles({
   root: {
@@ -15,7 +16,9 @@ const heroStyles = makeStyles({
     textAlign: 'center',
     textTransform: 'uppercase',
     margin: '30px 0',
-    height: '75vh',
+    [theme.breakpoints.up('md')]: {
+      height: '75vh',
+    },
   },
   paper: {
     textAlign: 'center',
@@ -83,8 +86,9 @@ export default function HeroSection() {
   const classes = heroStyles();
   return (
     <div className={classes.root}>
-      <Grid container justify="space-around" alignItems="center" spacing={3}>
-        {/* <Grid item xs={12}>
+      <SectionHOC>
+        <Grid container justify="space-around" alignItems="center" spacing={3}>
+          {/* <Grid item xs={12}>
           <div>
             <Link
               to="/portfolio"
@@ -97,62 +101,62 @@ export default function HeroSection() {
             </Link>
           </div>
         </Grid> */}
-        <Grid item xs={12} style={{ marginTop: 120 }}>
-          <div>
-            <Typography variant="h2" gutterBottom>
-              Hiring the right tech teams to drive innovation is hard
-            </Typography>
-            <Typography
-              variant="h3"
-              color="textSecondary"
-              component="p"
-              style={{ textTransform: 'uppercase', margin: 30 }}
+          <Grid item xs={12} style={{ marginTop: 120 }}>
+            <div>
+              <Typography variant="h2">
+                Hiring the right tech teams to drive innovation is hard
+              </Typography>
+              <Typography
+                variant="h3"
+                color="textSecondary"
+                component="p"
+                style={{ textTransform: 'uppercase', margin: 30 }}
+              >
+                I build operational effeciency as an engineer
+              </Typography>
+              <Container>
+                <Grid container alignItems="center">
+                  <Grid item xs={12} sm={6}>
+                    <ButtonBase className={classes.image}>
+                      <img
+                        className={classes.img}
+                        alt="complex"
+                        src="/images/profile2.png"
+                      />
+                    </ButtonBase>
+                    <Typography
+                      variant="h4"
+                      color="textSecondary"
+                      style={{ textTransform: 'uppercase', marginTop: '30px' }}
+                    >
+                      11 years in startups AS A FULL STACK WEB-MOBILE ENGINEER /
+                      PRODUCT GUY
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Link
+                      to="/portfolio"
+                      component={RouterLink}
+                      classes={{
+                        root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
+                      }}
+                    >
+                      Let&#39;s innovate together
+                    </Link>
+                  </Grid>
+                </Grid>
+              </Container>
+            </div>
+            <Link
+              to="/portfolio"
+              component={RouterLink}
+              classes={{
+                root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
+              }}
             >
-              I build operational effeciency as an engineer
-            </Typography>
-            <Container>
-              <Grid container alignItems="center">
-                <Grid item xs={6}>
-                  <ButtonBase className={classes.image}>
-                    <img
-                      className={classes.img}
-                      alt="complex"
-                      src="/images/profile2.png"
-                    />
-                  </ButtonBase>
-                  <Typography
-                    variant="h4"
-                    color="textSecondary"
-                    style={{ textTransform: 'uppercase', marginTop: '30px' }}
-                  >
-                    11 years in startups AS A FULL STACK WEB-MOBILE ENGINEER /
-                    PRODUCT GUY
-                  </Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Link
-                    to="/portfolio"
-                    component={RouterLink}
-                    classes={{
-                      root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
-                    }}
-                  >
-                    Let&#39;s innovate together
-                  </Link>
-                </Grid>
-              </Grid>
-            </Container>
-          </div>
-          <Link
-            to="/portfolio"
-            component={RouterLink}
-            classes={{
-              root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
-            }}
-          >
-            Portfolio
-          </Link>
-          {/* <AnchorLink
+              Portfolio
+            </Link>
+            {/* <AnchorLink
             smooth
             to="/portfolio#projects"
             component={RouterLink}
@@ -162,8 +166,9 @@ export default function HeroSection() {
           >
             Portfolio
           </AnchorLink> */}
+          </Grid>
         </Grid>
-      </Grid>
+      </SectionHOC>
     </div>
   );
 }

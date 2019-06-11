@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     // display: 'flex',
   },
   card: {
-    width: 250,
+    // width: 250,
     marginTop: 10,
     aligItems: 'center',
     justifyContent: 'center',
@@ -83,7 +83,7 @@ const ProfileCard = (props) => {
       <div className={classes.root}>
         <div>
           <Grid container alignItems="center">
-            <Grid item xs={2}>
+            <Grid item xs={4} sm={2}>
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,
@@ -95,26 +95,21 @@ const ProfileCard = (props) => {
                 <StackButton>V</StackButton>
               </IconButton>
             </Grid>
-            <Grid item xs={1} style={{ textAlign: 'right' }}>
+            <Grid item xs={4} sm={1} style={{ textAlign: 'right' }}>
               <Avatar>{props.projectIndex}</Avatar>
             </Grid>
-            <Grid item xs={1} style={{ textAlign: 'left' }}>
+            <Grid item xs={4} sm={1} style={{ textAlign: 'left' }}>
               <MuiLink href={project.code} target="_">
                 <ImageHOC src="/images/gh-icon.png" style={{ margin: 0 }} />
               </MuiLink>
             </Grid>
-            <Grid item xs={8} style={{ textAlign: 'left' }}>
-              <Typography variant="h5" style={{ textTransform: 'lowercase' }}>
+            <Grid item xs={12} sm={8} style={{ textAlign: 'left' }}>
+              <Typography variant="h5" style={{ textTransform: 'none' }}>
                 {project.objective}
               </Typography>
             </Grid>
-            <Grid item xs={4} />
-            <Grid item xs={8} style={{ textAlign: 'left' }}>
-              <MuiLink
-                className={classes.projectURL}
-                href={project.code}
-                target="_blank"
-              >
+            <Grid item xs={12} sm={12} style={{ textAlign: 'right' }}>
+              <MuiLink href={project.code} target="_blank">
                 <LinkButton>{projectURL}</LinkButton>
               </MuiLink>
             </Grid>
@@ -129,7 +124,7 @@ const ProfileCard = (props) => {
                 </svg> */}
                 <CardContent>
                   <Grid container>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                       <Typography
                         variant="h4"
                         color="textSecondary"
@@ -137,8 +132,13 @@ const ProfileCard = (props) => {
                       >
                         HIGHLIGHTS
                       </Typography>
+                      <div className={classes.projectIcons}>
+                        {highlights.map((highlight, index) => (
+                          <p key={index}>{highlight}</p>
+                        ))}
+                      </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                       <Typography
                         variant="h4"
                         color="textSecondary"
@@ -146,34 +146,6 @@ const ProfileCard = (props) => {
                       >
                         BUILD
                       </Typography>
-                    </Grid>
-                    <Grid item xs={3}>
-                      <Typography
-                        variant="h4"
-                        color="textSecondary"
-                        gutterBottom
-                      >
-                        TEST
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={3}>
-                      <Typography
-                        variant="h4"
-                        color="textSecondary"
-                        gutterBottom
-                      >
-                        DEPLOY
-                      </Typography>
-                    </Grid>
-
-                    <Grid item xs={3}>
-                      <div className={classes.projectIcons}>
-                        {highlights.map((highlight, index) => (
-                          <p key={index}>{highlight}</p>
-                        ))}
-                      </div>
-                    </Grid>
-                    <Grid item xs={3}>
                       <div className={classes.projectIcons}>
                         {project.architecture.build.map((tech, index) => (
                           <img
@@ -184,7 +156,15 @@ const ProfileCard = (props) => {
                         ))}
                       </div>
                     </Grid>
-                    <Grid item xs={3}>
+
+                    <Grid item xs={12} sm={3}>
+                      <Typography
+                        variant="h4"
+                        color="textSecondary"
+                        gutterBottom
+                      >
+                        TEST
+                      </Typography>
                       <div className={classes.projectIcons}>
                         {project.architecture.test.map((tech, index) => (
                           <img
@@ -195,7 +175,14 @@ const ProfileCard = (props) => {
                         ))}
                       </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
+                      <Typography
+                        variant="h4"
+                        color="textSecondary"
+                        gutterBottom
+                      >
+                        DEPLOY
+                      </Typography>
                       <div className={classes.projectIcons}>
                         {project.architecture.deploy.map((tech, index) => (
                           <img
