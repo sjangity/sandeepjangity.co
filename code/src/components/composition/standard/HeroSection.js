@@ -112,7 +112,7 @@ export default function HeroSection() {
                 component="p"
                 style={{ textTransform: 'uppercase', margin: 30 }}
               >
-                I build operational effeciency as an engineer
+                I invest into operational efficiency
               </Typography>
               <Container>
                 <Grid container alignItems="center">
