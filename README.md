@@ -14,6 +14,9 @@ _Shameless Plug_
 
 > [@sjangity](https://twitter.com/sjangity)
 
+### Color Theme
+> [ColorPallete](https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=E0E0E0&secondary.color=81e8dd&primary.text.color=000000) Material Design Theme
+
 ### Deploy Script
 > [Compile/Build](https://github.com/sjangity/startup-stack/blob/master/pull-static.sh) Used to deploy React SPA onto VPS.
 
