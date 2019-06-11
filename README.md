@@ -31,10 +31,6 @@ _Shameless Plug_
 
 > `/design/dropbox-sandeepjangity.co.0.0.1.sketch`
 
-### Flow Overview (outdated, but general mockup)
-
-> ![Sketch](/design/flow.png)
-
 ### Questions / Feedback
 
 Feel free to reach out to me at sandeep @ sandeepjangity.co
