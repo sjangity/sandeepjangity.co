@@ -14,6 +14,12 @@ _Shameless Plug_
 
 > [@sjangity](https://twitter.com/sjangity)
 
+### Technology Stack
+> [React Stack](https://sandeepjangity.co/portfolio) More details on tech stack used.
+
+### Color Theme
+> [ColorPallete](https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=E0E0E0&secondary.color=81e8dd&primary.text.color=000000) Material Design Theme
+
 ### Deploy Script
 > [Compile/Build](https://github.com/sjangity/startup-stack/blob/master/pull-static.sh) Used to deploy React SPA onto VPS.
 
@@ -24,10 +30,6 @@ _Shameless Plug_
 ### Sketch File
 
 > `/design/dropbox-sandeepjangity.co.0.0.1.sketch`
-
-### Flow Overview (outdated, but general mockup)
-
-> ![Sketch](/design/flow.png)
 
 ### Questions / Feedback
 
