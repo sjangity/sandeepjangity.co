@@ -16,9 +16,9 @@ const heroStyles = makeStyles({
     textAlign: 'center',
     textTransform: 'uppercase',
     margin: '30px 0',
-    [theme.breakpoints.up('md')]: {
-      height: '75vh',
-    },
+    // [theme.breakpoints.up('md')]: {
+    //   height: '75vh',
+    // },
   },
   paper: {
     textAlign: 'center',

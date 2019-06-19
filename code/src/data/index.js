@@ -1,6 +1,6 @@
 export const ossProjects = [
   {
-    key: 'sandeepjangity.co',
+    key: 'sandeepjangity',
     tech: 'React SPA',
     highlights: [
       'production-grade deploy',
@@ -13,7 +13,7 @@ export const ossProjects = [
     link: 'https://github.com/sjangity/sandeepjangity.co',
   },
   {
-    key: 'letseatsoftware.com',
+    key: 'letseatsoftware',
     tech: 'React SSG',
     highlights: ['Headless CMS', 'GraphQL', 'MongoDB'],
     buttonText: 'Code',
@@ -21,7 +21,7 @@ export const ossProjects = [
     link: 'https://github.com/sjangity/letseatsoftware.com',
   },
   {
-    key: 'fastrouteapp.com',
+    key: 'fastrouteapp',
     tech: 'iOS Swift',
     highlights: ['Objective-C to Swift Migration'],
     buttonText: 'Code',
