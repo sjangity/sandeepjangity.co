@@ -23,7 +23,7 @@ const detailStyles = {
     flexGrow: 1,
     textAlign: 'center',
     textTransform: 'uppercase',
-    margin: '30px 0',
+    // margin: '30px 0',
     // height: '75vh',
   },
   containerThink: {
@@ -135,7 +135,7 @@ class DetailContent extends Component {
       <div>
         <SectionHOC isGray={1}>
           <Grid container alignItems="center" spacing={0}>
-            <Grid item xs={12} style={{ marginTop: 120 }}>
+            <Grid item xs={12}>
               <Typography variant="h1" gutterBottom>
                 I BUILD FRONT-END AND BACKEND SYSTEMS
               </Typography>

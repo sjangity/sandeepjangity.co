@@ -88,13 +88,13 @@ export default function HeroSection() {
     <div className={classes.root}>
       <SectionHOC>
         <Grid container justify="space-around" alignItems="center" spacing={3}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <Typography variant="h1">
               Hiring the right tech teams to drive innovation is hard
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <div>
               <Container>
                 <Grid container alignItems="center">
