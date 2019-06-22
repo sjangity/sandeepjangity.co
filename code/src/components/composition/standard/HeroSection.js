@@ -88,22 +88,17 @@ export default function HeroSection() {
     <div className={classes.root}>
       <SectionHOC>
         <Grid container justify="space-around" alignItems="center" spacing={3}>
-          <Grid item xs={12} style={{ marginTop: 120 }}>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="h1">
+              Hiring the right tech teams to drive innovation is hard
+            </Typography>
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
             <div>
-              <Typography variant="h1">
-                Hiring the right tech teams to drive innovation is hard
-              </Typography>
-              <Typography
-                variant="h3"
-                color="textSecondary"
-                component="p"
-                style={{ textTransform: 'uppercase', margin: 30 }}
-              >
-                I invest into operational efficiency
-              </Typography>
               <Container>
                 <Grid container alignItems="center">
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12}>
                     <ButtonBase className={classes.image}>
                       <img
                         className={classes.img}
@@ -111,24 +106,15 @@ export default function HeroSection() {
                         src="/images/profile2.png"
                       />
                     </ButtonBase>
-                    <Typography
-                      variant="h4"
-                      color="textSecondary"
-                      style={{ textTransform: 'uppercase', marginTop: '30px' }}
-                    >
-                      11 years in startups AS A FULL STACK WEB-MOBILE ENGINEER /
-                      PRODUCT GUY
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
                     <Link
                       to="/portfolio"
                       component={RouterLink}
                       classes={{
                         root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
                       }}
+                      style={{ marginTop: 30 }}
                     >
-                      Let&#39;s innovate together
+                      I invest into operational efficiency
                     </Link>
                   </Grid>
                 </Grid>

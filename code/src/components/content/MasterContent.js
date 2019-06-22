@@ -125,9 +125,6 @@ const masterStyles = {
   highlight: {
     color: theme.palette.secondary.main,
   },
-  media: {
-    height: 140,
-  },
 };
 
 class MasterContent extends React.Component {
