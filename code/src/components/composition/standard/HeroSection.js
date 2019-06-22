@@ -15,7 +15,7 @@ const heroStyles = makeStyles({
     flexGrow: 1,
     textAlign: 'center',
     textTransform: 'uppercase',
-    margin: '30px 0',
+    // margin: '30px 0',
     // [theme.breakpoints.up('md')]: {
     //   height: '75vh',
     // },
@@ -88,22 +88,9 @@ export default function HeroSection() {
     <div className={classes.root}>
       <SectionHOC>
         <Grid container justify="space-around" alignItems="center" spacing={3}>
-          {/* <Grid item xs={12}>
-          <div>
-            <Link
-              to="/portfolio"
-              component={RouterLink}
-              classes={{
-                root: classes.cta, // class name, e.g. `classes-nesting-root-x`
-              }}
-            >
-              I want to help make it easier
-            </Link>
-          </div>
-        </Grid> */}
           <Grid item xs={12} style={{ marginTop: 120 }}>
             <div>
-              <Typography variant="h2">
+              <Typography variant="h1">
                 Hiring the right tech teams to drive innovation is hard
               </Typography>
               <Typography

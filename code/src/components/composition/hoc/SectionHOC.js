@@ -8,7 +8,8 @@ import theme from '../../theme';
 const sectionStyles = {
   paper: {
     padding: '3em 0 3em',
-    elevation: 0,
+    borderRadius: 0,
+    margin: '3em 0',
     textAlign: 'center',
     textTransform: 'uppercase',
     '&:nth-child(even)': {

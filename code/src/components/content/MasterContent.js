@@ -21,30 +21,14 @@ import theme from '../theme';
 import SectionHOC from '../composition/hoc/SectionHOC';
 import ImageHOC from '../composition/hoc/ImageHOC';
 import HeroSection from '../composition/standard/HeroSection';
-import { ossProjects } from '../../data';
-
-const myThoughts = [
-  {
-    id: 'thought1',
-    concept: 'On Performance',
-    description: 'Does FP Javascript scale better than OOP JS?',
-  },
-  {
-    id: 'thought4',
-    concept: 'On Standards',
-    description: 'Will Apple ever unlock full web push notifcation support?',
-  },
-  {
-    id: 'thought3',
-    concept: 'On Design Thinking',
-    description: 'What are the tell-tale signs of GOOD UI design?',
-  },
-];
+import { ossProjects, myThoughts } from '../../data';
 
 const masterStyles = {
   '@global': {
     body: {
-      backgroundColor: theme.palette.common.white,
+      // backgroundColor: theme.palette.primary.dark,
+      // backgroundImage: 'linear-gradient(260deg, #4cb5ab 0%, #81e8dd 100%)',
+      // backgroundImage: 'linear-gradient(260deg, #000 100%, #efefef 100%)',
     },
     ul: {
       margin: 0,
@@ -60,6 +44,11 @@ const masterStyles = {
   },
   cardGrid: {
     marginTop: 30,
+  },
+  card: {
+    // backgroundImage: 'linear-gradient(260deg, #000 100%, #efefef 100%)',
+    // color: 'white',
+    background: theme.palette.primary.main,
   },
   grid: {
     width: 1200,
@@ -135,6 +124,9 @@ const masterStyles = {
   },
   highlight: {
     color: theme.palette.secondary.main,
+  },
+  media: {
+    height: 140,
   },
 };
 
@@ -274,7 +266,7 @@ class MasterContent extends React.Component {
                 className={classes.ossGridItem}
               >
                 <CardHeader
-                  title={project.key}
+                  title={project.keyShort}
                   subheader={project.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
@@ -314,12 +306,23 @@ class MasterContent extends React.Component {
             questions
           </Typography>
           <Container className={classes.cardGrid}>
-            <Grid container spacing={4}>
+            <Grid
+              container
+              spacing={4}
+              direction="row"
+              justify="space-between"
+              alignItems="center"
+            >
               {myThoughts.map((thought) => (
                 <Grid item key={thought.id} xs={12} sm={12 / myThoughts.length}>
-                  <Card className={classes.card}>
+                  <Card>
                     <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
+                      <Typography
+                        className={classes.card}
+                        gutterBottom
+                        variant="h5"
+                        component="h2"
+                      >
                         {thought.concept}
                       </Typography>
                       <Typography>{thought.description}</Typography>
@@ -327,48 +330,40 @@ class MasterContent extends React.Component {
                   </Card>
                 </Grid>
               ))}
-
-              <Grid item xs={12}>
-                {/* <Paper className={classes.pageFooter}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    On Automation
-                  </Typography>
-                </Paper> */}
-                <Grid item>
-                  <Card className={classes.card}>
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        on automation
-                      </Typography>
-                      <Typography>
-                        how do you practice D-R-Y at all stages of product
-                        development?
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              </Grid>
             </Grid>
           </Container>
         </SectionHOC>
 
         <SectionHOC>
-          <Typography variant="h3">
-            <span className={classes.highlight}>I LISTEN</span> by applying
-            empathy in design and code
-          </Typography>
-          <Typography variant="h4" style={{ marginBottom: 50, marginTop: 30 }}>
-            because users dont care about technology
-          </Typography>
-          <Link
-            to="/portfolio"
-            component={RouterLink}
-            classes={{
-              root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
-            }}
-          >
-            they care about moments and experiences
-          </Link>
+          <Container>
+            <Grid container>
+              <Grid item xs={12}>
+                <Typography variant="h3">
+                  <span className={classes.highlight}>I LISTEN</span> by
+                  applying empathy in design and code
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography
+                  variant="h4"
+                  style={{ marginBottom: 50, marginTop: 30 }}
+                >
+                  because users only care about the end-product
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Link
+                  to="/portfolio"
+                  component={RouterLink}
+                  classes={{
+                    root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
+                  }}
+                >
+                  And it needs to be easy, useful, fast, reliable and engaging
+                </Link>
+              </Grid>
+            </Grid>
+          </Container>
         </SectionHOC>
       </div>
     );

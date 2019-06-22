@@ -1,19 +1,21 @@
 export const ossProjects = [
   {
-    key: 'sandeepjangity',
+    key: 'sandeepjangity.co',
+    keyShort: 'sandeepjangity',
     tech: 'React SPA',
     highlights: [
-      'production-grade deploy',
+      'modern front-end, production-grade deploy',
       'material-ui',
       'styled-components',
-      'jss',
+      'CSS-in-JS',
     ],
     buttonText: 'Code',
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/sandeepjangity.co',
   },
   {
-    key: 'letseatsoftware',
+    key: 'letseatsoftware.com',
+    keyShort: 'letseatsoftware',
     tech: 'React SSG',
     highlights: ['Headless CMS', 'GraphQL', 'MongoDB'],
     buttonText: 'Code',
@@ -21,7 +23,8 @@ export const ossProjects = [
     link: 'https://github.com/sjangity/letseatsoftware.com',
   },
   {
-    key: 'fastrouteapp',
+    key: 'fastrouteapp.com',
+    keyShort: 'fastrouteapp',
     tech: 'iOS Swift',
     highlights: ['Objective-C to Swift Migration'],
     buttonText: 'Code',
@@ -115,3 +118,27 @@ export const projectHighlights = (key) => {
     .map((item) => item.highlights)
     .reduce((acc, arr) => acc.concat.apply([], arr), []);
 };
+
+export const myThoughts = [
+  {
+    id: 'thought1',
+    concept: 'On Performance',
+    description: 'Does FP Javascript scale better than OOP JS?',
+  },
+  {
+    id: 'thought4',
+    concept: 'On Standards',
+    description: 'Will Apple ever unlock full web push notifcation support?',
+  },
+  {
+    id: 'thought3',
+    concept: 'On Design Thinking',
+    description: 'What are the tell-tale signs of GOOD UI design?',
+  },
+  {
+    id: 'thought5',
+    concept: 'On Automation',
+    description:
+      'how do you practice D-R-Y at all stages of product development?',
+  },
+];

@@ -136,8 +136,8 @@ class DetailContent extends Component {
         <SectionHOC isGray={1}>
           <Grid container alignItems="center" spacing={0}>
             <Grid item xs={12} style={{ marginTop: 120 }}>
-              <Typography variant="h2" gutterBottom>
-                I BUILD FRONTEND AND BACKEND SYSTEMS
+              <Typography variant="h1" gutterBottom>
+                I BUILD FRONT-END AND BACKEND SYSTEMS
               </Typography>
             </Grid>
             <Grid item xs={12}>
