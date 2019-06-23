@@ -31,14 +31,15 @@ export const ossProjects = [
     buttonVariant: 'outlined',
     link: 'https://github.com/sjangity/fastrouteapp-ios',
   },
-  // {
-  //   title: 'peerflight.com',
-  //   tech: 'Native Obj-C Client',
-  //   description: ['Web-Mobile Integration'],
-  //   buttonText: 'Code',
-  //   buttonVariant: 'outlined',
-  //   link: 'https://github.com/sjangity/peerflight-ios',
-  // },
+  {
+    key: 'peerflight.com',
+    keyShort: 'peerflight',
+    tech: 'iOS Obj-C',
+    highlights: ['Web-Mobile Integration'],
+    buttonText: 'Code',
+    buttonVariant: 'outlined',
+    link: 'https://github.com/sjangity/peerflight-ios',
+  },
 ];
 
 const stockReactArch = {

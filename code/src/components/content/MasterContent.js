@@ -38,6 +38,11 @@ const masterStyles = {
       listStyle: 'none',
     },
   },
+  root: {
+    [theme.breakpoints.down('md')]: {
+      margin: '80px 0',
+    },
+  },
   box: {
     marginBottom: 40,
     height: 65,
@@ -132,33 +137,33 @@ class MasterContent extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.root}>
         <HeroSection />
 
         <SectionHOC>
           <Typography variant="h3">
-            1 MILLION PAGE VIEWS, 50K ORGANIC REGISTRATIONS, ZERO PR-MARKETING
+            1 MILLION PAGE VIEWS, 50K USER REGISTRATIONS, ZERO MARKETING, ZERO
+            PR
           </Typography>
-          <Typography variant="h4" style={{ margin: '30px 0' }}>
-            innovation is correlated strongly with user empathy
+          <Typography variant="h4" color="textSecondary">
+            Forget bad products, even great ideas fail to reach true potential
+            if user empathy stops
           </Typography>
           <Container>
-            <Grid container style={{ alignItems: 'center' }}>
-              <Grid item xs={12} sm={10}>
+            <Grid container style={{ alignItems: 'center' }} spacing={4}>
+              <Grid item xs={12}>
                 <ImageHOC src="/images/product-stats.png" />
-                <Typography variant="h6">
-                  traffic drop from one of my online web properties
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Typography variant="h5" color="textSecondary">
+                  product success is correlated with user empathy
                 </Typography>
               </Grid>
-              <Grid item xs={12} sm={2}>
-                <Typography variant="h5" className={classes.listenMore}>
-                  traction is not the hardest part
-                </Typography>
-
+              <Grid item xs={12} sm={4}>
                 <Paper
                   eleveation={0}
                   style={{
-                    background: 'white',
+                    background: theme.palette.primary.light,
                     padding: '5px',
                     margin: '30px 0',
                   }}
@@ -168,28 +173,30 @@ class MasterContent extends React.Component {
                     (continuously)
                   </Typography>
                 </Paper>
-                <Typography variant="h5">
-                  Thats the secret to building great tech teams that can drive
-                  innovation
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Typography variant="h5" color="textSecondary">
+                  That&#39;s the secret to hiring great tech teams
                 </Typography>
               </Grid>
-              {/* <Grid item xs={12}>
-                <Typography variant="h4">
-                  Traffic graph from one of my online web properties
-                </Typography>
-              </Grid> */}
             </Grid>
           </Container>
         </SectionHOC>
-        <SectionHOC>
-          <Typography variant="h3">
-            WHAT DOES 11 YEARS in STARTUPS TEACH YOU?
-          </Typography>
 
-          <Typography variant="h4" style={{ marginTop: 30 }}>
+        <SectionHOC>
+          <Typography variant="h3">ASSUMPTIONS AND FACTS CAN CHANGE</Typography>
+          <Typography
+            variant="h4"
+            color="textSecondary"
+            style={{ marginTop: 30 }}
+          >
             listening is not passive, but an active process
           </Typography>
-          <Typography variant="h5" style={{ marginTop: 30 }}>
+          <Typography
+            variant="h5"
+            color="textSecondary"
+            style={{ marginTop: 30 }}
+          >
             a very simple principle to understand, but very hard to master
           </Typography>
         </SectionHOC>
@@ -343,6 +350,7 @@ class MasterContent extends React.Component {
               <Grid item xs={12}>
                 <Typography
                   variant="h4"
+                  color="textSecondary"
                   style={{ marginBottom: 50, marginTop: 30 }}
                 >
                   because users only care about the end-product

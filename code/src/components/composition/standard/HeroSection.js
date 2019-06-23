@@ -15,10 +15,9 @@ const heroStyles = makeStyles({
     flexGrow: 1,
     textAlign: 'center',
     textTransform: 'uppercase',
-    // margin: '30px 0',
-    // [theme.breakpoints.up('md')]: {
-    //   height: '75vh',
-    // },
+    [theme.breakpoints.down('md')]: {
+      margin: '30px 0',
+    },
   },
   paper: {
     textAlign: 'center',
@@ -93,33 +92,36 @@ export default function HeroSection() {
               Hiring the right tech teams to drive innovation is hard
             </Typography>
           </Grid>
-
           <Grid item xs={12}>
-            <div>
-              <Container>
-                <Grid container alignItems="center">
-                  <Grid item xs={12}>
-                    <ButtonBase className={classes.image}>
-                      <img
-                        className={classes.img}
-                        alt="complex"
-                        src="/images/profile2.png"
-                      />
-                    </ButtonBase>
-                    <Link
-                      to="/portfolio"
-                      component={RouterLink}
-                      classes={{
-                        root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
-                      }}
-                      style={{ marginTop: 30 }}
-                    >
-                      I invest into operational efficiency
-                    </Link>
-                  </Grid>
+            <Typography variant="h2" color="textSecondary">
+              Product lessons as a Full Stack Engineer from 11 years in
+              start-ups
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Container>
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <ButtonBase className={classes.image}>
+                    <img
+                      className={classes.img}
+                      alt="complex"
+                      src="/images/profile2.png"
+                    />
+                  </ButtonBase>
+                  <Link
+                    to="/portfolio"
+                    component={RouterLink}
+                    classes={{
+                      root: classes.ctaPrimary, // class name, e.g. `classes-nesting-root-x`
+                    }}
+                    style={{ marginTop: 30 }}
+                  >
+                    I invest into operational efficiency
+                  </Link>
                 </Grid>
-              </Container>
-            </div>
+              </Grid>
+            </Container>
             <Link
               to="/portfolio"
               component={RouterLink}
@@ -129,16 +131,6 @@ export default function HeroSection() {
             >
               Portfolio
             </Link>
-            {/* <AnchorLink
-            smooth
-            to="/portfolio#projects"
-            component={RouterLink}
-            classes={{
-              root: classes.portLink, // class name, e.g. `classes-nesting-root-x`
-            }}
-          >
-            Portfolio
-          </AnchorLink> */}
           </Grid>
         </Grid>
       </SectionHOC>

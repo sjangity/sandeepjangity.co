@@ -19,12 +19,15 @@ import SectionHOC from '../composition/hoc/SectionHOC';
 import ProfileCardList from '../composition/hooks/ProfileCardList';
 
 const detailStyles = {
+  root: {
+    [theme.breakpoints.down('md')]: {
+      margin: '80px 0',
+    },
+  },
   hero: {
     flexGrow: 1,
     textAlign: 'center',
     textTransform: 'uppercase',
-    // margin: '30px 0',
-    // height: '75vh',
   },
   containerThink: {
     display: 'flex',
@@ -132,7 +135,7 @@ class DetailContent extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.root}>
         <SectionHOC isGray={1}>
           <Grid container alignItems="center" spacing={0}>
             <Grid item xs={12}>
