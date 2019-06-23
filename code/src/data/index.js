@@ -80,7 +80,7 @@ export const projects = [
     url: 'https://fastrouteapp.com',
     isLive: 1,
     isOpenDefault: 0,
-    code: 'https://github.com/sjangity/sandeepjangity.co',
+    code: 'https://github.com/sjangity/fastrouteapp-ios',
     objective:
       'App store approved iOS + Swift mobile client for fastrouteapp.com',
     title: 'iOS Swift Native Client',
@@ -98,7 +98,7 @@ export const projects = [
     url: 'https://peerflight.com',
     isLive: 1,
     isOpenDefault: 0,
-    code: 'https://github.com/sjangity/sandeepjangity.co',
+    code: 'https://github.com/sjangity/peerflight-ios',
     objective:
       'App store approved iOS + Objective-C mobile client for peerflight with backend running on LAMP-stack & VPS',
     title: 'ios Objective-C Native Client with Full-Web UI Integration',
