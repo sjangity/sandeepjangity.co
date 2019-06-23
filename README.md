@@ -8,8 +8,6 @@ A standard master-detail interface fairly conventional in the native mobile worl
 
 _Shameless Plug_
 
-> [Resume](http://bit.ly/sandeep-jangity-resume-latest)
-
 > [LinkedIn](https://www.linkedin.com/in/sjangity/)
 
 > [@sjangity](https://twitter.com/sjangity)
